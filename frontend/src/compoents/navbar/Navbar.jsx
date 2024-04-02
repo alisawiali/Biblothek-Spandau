@@ -21,7 +21,7 @@ const Navbar = () => {
           placeholder="Search a post"
         />
       </div>
-      <div className="flex items-center justify-center space-x-2 md:space-x-4">
+      <div className="flex items-center justify-center space-x-2 md:space-x-4 ">
         {/*  wenn den User angemeldet ist dann geht zum write sits */}
         {user ? (
           <h3>
