@@ -19,7 +19,7 @@ const HomePosts = () => {
             <p>23:41</p>
           </div>
         </div>
-        <p className="text-sm md:text-lg">
+        <p className="text-sm md:text-x1 my-4">
           Prominente Beispiele für KI-Software im täglichen Leben sind
           Sprachassistenten, Bilderkennung, Empfehlungssysteme, persönliche
           Assistenten, Übersetzungswerkzeuge, Chatbots, Gesichtserkennung und
