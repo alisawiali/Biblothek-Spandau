@@ -1,10 +1,15 @@
 import React from "react";
+import { Footer, Home, HomePosts, Navbar } from "./compoents/UL";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-      eveniet rem modi unde minus maiores sunt voluptate illum dolores debitis?
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
     </div>
   );
 };
