@@ -4,3 +4,5 @@ export { default as Footer } from "../footer/Footer.jsx";
 
 // // Pages
 export { default as Home } from "../../pages/Home.jsx";
+export { default as Login } from "../../pages/Login.jsx";
+export { default as Register } from "../../pages/Register.jsx";
