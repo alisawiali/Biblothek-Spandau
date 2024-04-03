@@ -1,15 +1,19 @@
 import React from "react";
-import { HomePosts } from "../compoents/UL";
+import { Footer, HomePosts, Navbar } from "../compoents/UL";
 
 const Home = () => {
   return (
-    <div className="px-8 md:px-[100px]  py-4">
-      <HomePosts />
-      <HomePosts />
-      <HomePosts />
-      <HomePosts />
-      <HomePosts />
-    </div>
+    <>
+      <Navbar />
+      <div className="px-8 md:px-[100px] py-4">
+        <HomePosts />
+        <HomePosts />
+        <HomePosts />
+        <HomePosts />
+        <HomePosts />
+      </div>
+      <Footer />
+    </>
   );
 };
 
