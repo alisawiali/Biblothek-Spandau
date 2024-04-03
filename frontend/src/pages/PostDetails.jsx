@@ -9,7 +9,7 @@ const PostDetails = () => {
   return (
     <div>
       <Navbar />
-      <div className="px-8 px-[200px] mt-8">
+      <div className="px-8 md:px-[200px] mt-8">
         <div className="flex justify-between items-center">
           <h1 className="text-2x1 font-bold text-black md:text-3x1">
             10 Uses of artifcial intelliganze in Day to Day Life
