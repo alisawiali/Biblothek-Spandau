@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Footer } from "../compoents/UL";
 const Register = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const Register = () => {
         </h1>
         <NavLink to="/login">Login</NavLink>
       </div>
-      <div className="w-full flex justify-center items-center h-[80vh]">
+      <div className="w-full flex justify-center items-center h-[65vh]">
         <div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
           <h1 className="text-xl font-bold text-left">Create an Aaccount</h1>
           <input
@@ -39,6 +40,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -7,7 +7,7 @@ import { BiSearch } from "react-icons/bi";
 const Navbar = () => {
   const user = false;
   return (
-    <div className="flex items-center justify-between px-6 py-4 md:px-[200px] ">
+    <div className="md:sticky md:top-0 bg-gray-200 flex items-center justify-between px-6 py-4 md:px-[200px] ">
       <h1 className="text-lg md:text-x1 font-extrabold">
         <NavLink to="/">Bibliothek</NavLink>
       </h1>
@@ -16,7 +16,7 @@ const Navbar = () => {
           <BiSearch />
         </p>
         <input
-          className="outline-none px-0 text-1 "
+          className="outline-none px-0 text-1 pl-2 rounded-lg "
           type="text"
           placeholder="Search a post"
         />
