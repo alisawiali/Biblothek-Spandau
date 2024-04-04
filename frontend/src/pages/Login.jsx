@@ -33,11 +33,6 @@ const Login = () => {
             <p className="text-gray-500 hover:text-black">
               <NavLink to="/register">Register</NavLink>
             </p>
-            {/* <p className="font-light cursor-pointer">Forgot Password?</p>
-          <hr className="border-gray-800" />
-          <a href="#" className="font-medium cursor-pointer">
-            Create an account
-          </a> */}
           </div>
         </div>
       </div>

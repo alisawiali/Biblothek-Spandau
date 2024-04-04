@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  CreatePost,
   Footer,
   Home,
   Login,
@@ -16,6 +17,7 @@ const App = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/write" element={<CreatePost />} />
         <Route path="/posts/post/:id" element={<PostDetails />} />
       </Routes>
     </div>
