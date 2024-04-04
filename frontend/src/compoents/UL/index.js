@@ -8,4 +8,5 @@ export { default as Login } from "../../pages/Login.jsx";
 export { default as Register } from "../../pages/Register.jsx";
 export { default as PostDetails } from "../../pages/PostDetails.jsx";
 export { default as CreatePost } from "../../pages/CreatePost.jsx";
+export { default as EdidtPost } from "../../pages/EditPost.jsx";
 
