@@ -26,11 +26,20 @@ const CreatePost = () => {
                 Add
               </div>
             </div>
-            <div className="flex justify-center items-center space-x-2 bg-gray-200 px-2 py-1 rounded-md">
-              <p>Tach</p>
-              <p className="text-white bg-black rounded-full cursor-pointer p-1 text-sm">
-                <ImCross />
-              </p>
+            {/* categories */}
+            <div className="flex px-4 mt-3">
+              <div className="flex justify-center items-center space-x-2 bg-gray-200 px-2 py-1 rounded-md m-1">
+                <p>Tach</p>
+                <p className="text-white bg-black rounded-full cursor-pointer p-1 text-sm ">
+                  <ImCross />
+                </p>
+              </div>
+              <div className="flex justify-center items-center space-x-2 bg-gray-200 px-2 py-1 rounded-md m-1">
+                <p>Tach</p>
+                <p className="text-white bg-black rounded-full cursor-pointer p-1 text-sm">
+                  <ImCross />
+                </p>
+              </div>
             </div>
           </div>
         </form>
