@@ -7,6 +7,7 @@ import {
   Login,
   Navbar,
   PostDetails,
+  Profile,
   Register,
 } from "./compoents/UL";
 import { Route, Routes } from "react-router-dom";
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/write" element={<CreatePost />} />
         <Route path="/posts/post/:id" element={<PostDetails />} />
         <Route path="/edit/:id" element={<EdidtPost />} />
+        <Route path="/profile/:id" element={<Profile />} />
       </Routes>
     </div>
   );
