@@ -9,9 +9,14 @@ const CreatePost = () => {
   const [cat, setCat] = useState("");
   const [cats, setCats] = useState([]);
 
-  const deletCategroy = () => {};
-  //
+  const deleteCategory = (item) => {
+    const updatedCats = cats.filter((c, i) => i !== item);
+    setCats(updatedCats);
+  };
+  // Funktion zum Hinzufügen einer Kategorie
   const addCategory = () => {
+    //   setCats((prevCats) => [...prevCats, cat]); // Eine neue Kategorie hinzufügen
+    //   setCat(""); // Kategorie zurücksetzen
     let updateCats = [...cats];
     updateCats.push(cat);
     setCat("");
@@ -55,7 +60,7 @@ const CreatePost = () => {
                 >
                   <p>{items}</p>
                   <p
-                    onClick={deletCategroy}
+                    onClick={() => deleteCategory(id)}
                     className="text-white bg-black rounded-full cursor-pointer p-1 text-sm "
                   >
                     <ImCross />
