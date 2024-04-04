@@ -5,6 +5,8 @@ import { Comment, Footer, Navbar } from "../compoents/UL";
 //  Import icons aus dem react icons
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+
+// 
 const PostDetails = () => {
   return (
     <div>
