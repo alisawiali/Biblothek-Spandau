@@ -32,6 +32,9 @@ export const login = async (req, res, next) => {
     if (!match) {
       return res.status(400).send("Wroung credentials");
     }
+      const token = jws.sign({ id: user._id }, process.env.SECRET_KEY, {
+        expiresIn: "3d", // // Das Token läuft nach 3 Monat ab
+      });
     res.status(200).json(user);
   } catch (error) {
     next(error.message);
