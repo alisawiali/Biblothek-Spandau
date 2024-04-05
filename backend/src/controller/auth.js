@@ -6,9 +6,8 @@ import jwt from "jsonwebtoken";
 export const register = async (req, res, next) => {
   try {
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(req.body.password, salt);
-    // const { username, email, password } = req.body;
-    const newUser = await User({ ...req.body, password: hash });
+    const hashPassword = bcrypt.hashSync(req.body.password, salt);
+    const newUser = await User({ ...req.body, password: hashPassword });
     const saveUser = await newUser.save();
     res.status(200).send(saveUser);
   } catch (error) {
@@ -23,5 +22,20 @@ export const register = async (req, res, next) => {
 };
 
 //LOGIN
+export const login = async (req, res, next) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(200).send("User Not Found!");
+    }
+    const match = await bcrypt.compare(req.body.password, user.password);
+    if (!match) {
+      return res.status(400).send("Wroung credentials");
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    next(error.message);
+  }
+};
 
 //LOGOUT
