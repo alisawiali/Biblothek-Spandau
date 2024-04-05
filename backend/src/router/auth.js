@@ -1,9 +1,8 @@
 import { Router } from "express";
-import User from "../model/User.js";
-import bcrypt from "bycrpt";
-import jwt from "jsonwebtoken";
+import { register } from "../controller/auth.js";
+
 const router = Router();
 
-router.get();
+router.post("/register", register);
 
 export default router;
