@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./src/service/db.js";
-
+//middlewares
 dotenv.config();
 
 const app = express();

@@ -8,7 +8,7 @@ export async function connectDB() {
     await mongoose.connect(process.env.ATLAS_API, {
       dbName: process.env.BibliothekApp,
     });
-    console.log("Connection to DB established!");
+    console.log("Connection BibliothekApp to DB established!");
   } catch (error) {
     console.log(`Error connecting to the database: ${error}`);
   }
