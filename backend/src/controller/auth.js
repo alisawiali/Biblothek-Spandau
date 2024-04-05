@@ -28,12 +28,15 @@ export const login = async (req, res, next) => {
     if (!user) {
       return res.status(200).send("User Not Found!");
     }
-    const match = await bcrypt.compare(req.body.password, user.password);
-    if (!match) {
+    const isPasswordValid = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!isPasswordValid) {
       return res.status(400).send("Wroung credentials");
     }
       const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY, {
-        expiresIn: "1d", // // Das Token läuft nach 1 Monat ab
+        expiresIn: "1d", //  Das Token läuft nach 1 Monat ab
       });
       const { password, ...info } = user._doc;
       res.cookie("accesse_token", token).status(200).send(info);
