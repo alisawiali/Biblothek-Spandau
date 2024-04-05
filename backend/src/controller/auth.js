@@ -45,3 +45,17 @@ export const login = async (req, res, next) => {
 };
 
 //LOGOUT
+    // cookie lerr erstelle
+    // Löschen des Access-Token-Cookies aus der Antwort
+    // Cookie löschen, Einstellungen für Cross-Site-Requests und Sicherheit
+
+export const logout = (req, res, next) => {
+  try {
+    res
+      .clearCookie("accesse_token", { sameSite: "none", secure: true })
+      .status(200)
+      .send({ message: "User Logged out successfully!" });
+  } catch (error) {
+    next(error.message);
+  }
+};
