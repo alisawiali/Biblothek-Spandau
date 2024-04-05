@@ -32,9 +32,12 @@ export const login = async (req, res, next) => {
     if (!match) {
       return res.status(400).send("Wroung credentials");
     }
-      const token = jws.sign({ id: user._id }, process.env.SECRET_KEY, {
-        expiresIn: "3d", // // Das Token läuft nach 3 Monat ab
+      const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY, {
+        expiresIn: "1d", // // Das Token läuft nach 1 Monat ab
       });
+      const { password, ...info } = user._doc;
+      res.cookie("accesse_token", token).status(200).send(info);
+
     res.status(200).json(user);
   } catch (error) {
     next(error.message);
