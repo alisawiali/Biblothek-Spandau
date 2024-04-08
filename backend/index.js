@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./service/db.js";
+import cookieParser from "cookie-parser";
 import authRouter from "./src/router/auth.js";
 import userRouter from "./src/router/user.js";
 import postrRouter from "./src/router/post.js";
@@ -15,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 // DB
 await connectDB();
-
+app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/posts", postrRouter);

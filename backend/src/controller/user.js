@@ -3,8 +3,9 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Post from "../model/Post.js";
 import Comment from "../model/Comment.js";
-//UPDATE
 
+
+//UPDATE
 export const updateUser = async (req, res, next) => {
   try {
     const newPassword = req.body.password; // Das Passwort aus req.body extrahieren
