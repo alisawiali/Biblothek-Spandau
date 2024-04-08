@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { updateUser } from "../controller/user.js";
+import { deletedUser, updateUser } from "../controller/user.js";
 const router = Router();
 
 //
 router.put("/:id", updateUser);
-router.delete("/:id");
+router.delete("/:id", deletedUser);
 router.get("/");
 router.get("/:id");
 router.post("/");
