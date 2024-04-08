@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import Post from "../model/Post.js";
 import Comment from "../model/Comment.js";
 
-
 //UPDATE
 export const updateUser = async (req, res, next) => {
   try {
@@ -25,7 +24,7 @@ export const updateUser = async (req, res, next) => {
     res.status(200).send(updatedUser);
   } catch (error) {
     if (error.code === 11000) {
-      res.status(409).send(error.message);
+      res.status(409).send("username schon  vorhand");
     }
     next(error);
   }

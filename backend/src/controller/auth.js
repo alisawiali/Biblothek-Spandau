@@ -39,7 +39,7 @@ export const login = async (req, res, next) => {
         expiresIn: "3m", //  Das Token läuft nach 3 Monat ab
       });
       const { password, ...info } = user._doc;
-      res.cookie("accesse_token", token).status(200).send(info);
+      res.cookie("token", token).status(200).send(info);
 
     res.status(200).json(user);
   } catch (error) {

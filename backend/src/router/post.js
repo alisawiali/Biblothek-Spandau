@@ -8,12 +8,14 @@ import {
   updatePost,
 } from "../controller/post.js";
 
+import { verifyToken } from "../middlewares/middleware.js";
+
 const router = Router();
 
 //
-router.post("/create", addPost);
-router.put("/:id", updatePost);
-router.delete("/:id", deletPost);
+router.post("/create", verifyToken, addPost);
+router.put("/:id", verifyToken, updatePost);
+router.delete("/:id", verifyToken, deletPost);
 router.get("/", getAllPosts);
 router.get("/:id", getPostId);
 router.get("/user/:userId", getUserId);
