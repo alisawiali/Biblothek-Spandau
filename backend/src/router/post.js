@@ -17,5 +17,6 @@ router.delete("/:id", deletPost);
 router.get("/", getAllPosts);
 router.get("/:id", getPostId);
 router.get("/user/:userId", getUserId);
+// router.get("/search/:prompt", searchPosts);
 
 export default router;

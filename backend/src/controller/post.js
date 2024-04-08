@@ -59,15 +59,21 @@ export const getPostId = async (req, res, next) => {
 
 // GET POSTS
 export const getAllPosts = async (req, res, next) => {
+  const serachPost = req.query;
   try {
-    const posts = await Post.find({});
-    res.status(200).send(`getAllPosts: ${posts}`);
+    //  $regex: suche zeichenfologe in mongoosDB
+    // $options auf "i" gesetzt ist, ignoriert MongoDB die Groß-/Kleinschreibung beim Vergleich von Zeichenfolgen.
+    const searchFilter = serachPost
+      ? { title: { $regex: serachPost.search, $options: "i" } }
+      : null;
+    const posts = await Post.find(searchFilter);
+    res.status(200).send(posts);
   } catch (error) {
     next(error);
   }
 };
 
-// GET USERID POSTS
+// GET USER  COMMENT 
 export const getUserId = async (req, res, next) => {
   try {
     //    userId findet sich im Model(PostSchema)
@@ -78,3 +84,11 @@ export const getUserId = async (req, res, next) => {
     next(error);
   }
 };
+
+
+// //  SEARCH POSTS
+
+// export const searchPosts = async (req, res, next) => {
+//   try {
+//   } catch (error) {}
+// };
