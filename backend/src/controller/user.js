@@ -44,7 +44,8 @@ export const deletedUser = async (req, res, next) => {
   }
 };
 
-// //GET USER
+
+//GET USERID
 export const getUserId = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
@@ -58,14 +59,3 @@ export const getUserId = async (req, res, next) => {
   }
 };
 
-// // GET IDUSER
-// export const getUserId = (req, res, next) => {
-//   try {
-//   } catch (error) {}
-// };
-
-// // POST  USER
-// export const creatUser = (req, res, next) => {
-//   try {
-//   } catch (error) {}
-// };
