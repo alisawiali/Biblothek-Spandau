@@ -51,7 +51,8 @@ export const getUserId = async (req, res, next) => {
     if (!user) {
       res.status(409).send("User not found");
     }
-    res.status(200).json(user);
+    const { password, ...info } = user._doc;
+    res.status(200).json(info);
   } catch (error) {
     next(error);
   }
