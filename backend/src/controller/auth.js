@@ -62,3 +62,16 @@ export const logout = (req, res, next) => {
     next(error.message);
   }
 };
+
+//  REFETCH USER
+export const refechUser = async (req, res, next) => {
+  const token = req.kookies.token || {};
+  jwt.verify(token, process.env.SECRET_KEY, {}, async (err, data) => {
+    if (err) {
+      return res.status(404).json(err)
+    }
+    res.status(200).json(data)
+  })
+
+}
+  
