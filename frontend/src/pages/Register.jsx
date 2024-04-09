@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Footer } from "../compoents/UL";
 import axios from "axios";
 import { URL } from "../url";
@@ -8,14 +8,23 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
   //
+  const navigate = useNavigate();
   const handelRegister = async () => {
     try {
-      const res = await axios.post(URL + "/api/auth/register");
-      console.log(res);
+      const res = await axios.post(`${URL}/api/auth/register`, {
+        username,
+        email,
+        password,
+      });
+      setUsername(res.data.username);
+      setEmail(res.data.email);
+      setPassword(res.data.password);
+      setError(false);
+      navigate("/login");
     } catch (error) {
-      console.log(error);
+      setError(true); // Zugriff auf Fehlerantwort über error.response.data
     }
   };
 
@@ -55,7 +64,9 @@ const Register = () => {
           >
             Register
           </button>
-
+          {error && (
+            <h3 className="text-red-500 text-sm">Somthing went wrong!</h3>
+          )}
           <div className="flex justify-between items-center space-x-12">
             <p>Already have an account</p>
             <p className="text-gray-500 hover:text-black">
