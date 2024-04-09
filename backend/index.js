@@ -11,23 +11,23 @@ import commentsRouter from "./src/router/comment.js";
 dotenv.config();
 
 const app = express();
-
 app.use(express.json());
-
 const corsOptions = {
   origin: process.env.FRONTEND_API,
   credentials: true,
-  methods: "GET,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
-//Middelwaers
+// Middleware für CORS
 app.use(cors(corsOptions));
-// 
+
 const PORT = process.env.PORT || 3000;
 
-// DB
+// Datenbankverbindung herstellen
 await connectDB();
+
+// Cookie-Parser Middleware
 app.use(cookieParser());
 
 // Middleware vor den Routen

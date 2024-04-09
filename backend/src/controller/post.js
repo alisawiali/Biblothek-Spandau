@@ -1,11 +1,9 @@
-import User from "../model/User.js";
-import bcrypt from "bcryptjs";
 import Post from "../model/Post.js";
-import Comment from "../model/Comment.js";
 
 // CREATE NEW POST
 export const addPost = async (req, res, next) => {
   try {
+    //  const post = await Post.create(req.body);
     const newPost = await Post(req.body);
     const savePost = await newPost.save();
     res.status(200).send(savePost);
@@ -56,24 +54,25 @@ export const getPostId = async (req, res, next) => {
     next(error);
   }
 };
-
 // GET POSTS
 export const getAllPosts = async (req, res, next) => {
-  const serachPost = req.query;
+  const searchPost = req.query.search; // Zugriff auf den Suchparameter
   try {
-    //  $regex: suche zeichenfologe in mongoosDB
-    // $options auf "i" gesetzt ist, ignoriert MongoDB die Groß-/Kleinschreibung beim Vergleich von Zeichenfolgen.
-    const searchFilter = serachPost
-      ? { title: { $regex: serachPost.search, $options: "i" } }
-      : null;
-    const posts = await Post.find(searchFilter);
-    res.status(200).send(posts);
+    let searchFilter = {}; // Initialisierung des Filters
+
+    if (searchPost) {
+      // Überprüfen, ob die Suchanfrage vorhanden ist
+      searchFilter = { title: { $regex: searchPost, $options: "i" } }; // Filter entsprechend setzen
+    }
+
+    const posts = await Post.find(searchFilter); // MongoDB-Abfrage mit dem Filter ausführen
+    res.status(200).send(posts); // Erfolgreiche Antwort senden
   } catch (error) {
-    next(error);
+    next(error); // Fehler an den Fehlerbehandlungs-Middleware weitergeben
   }
 };
 
-// GET USER  COMMENT 
+// GET USER  COMMENT
 export const getUserId = async (req, res, next) => {
   try {
     //    userId findet sich im Model(PostSchema)
@@ -84,11 +83,3 @@ export const getUserId = async (req, res, next) => {
     next(error);
   }
 };
-
-
-// //  SEARCH POSTS
-
-// export const searchPosts = async (req, res, next) => {
-//   try {
-//   } catch (error) {}
-// };
