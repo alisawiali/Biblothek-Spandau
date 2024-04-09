@@ -2,10 +2,8 @@ import React from "react";
 import {
   CreatePost,
   EdidtPost,
-  Footer,
   Home,
   Login,
-  Navbar,
   PostDetails,
   Profile,
   Register,

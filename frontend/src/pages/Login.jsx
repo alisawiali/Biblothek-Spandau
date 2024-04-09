@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Footer } from "../compoents/UL";
 import axios from "axios";
 import { URL } from "../url";
+import { UserHookContext } from "../context/userContext";
 
 //
 const Login = () => {
@@ -11,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const { setUser } = useContext(UserHookContext);
   // Submit Form Functionality
   const handelLogin = async () => {
     try {
@@ -18,10 +20,9 @@ const Login = () => {
         email,
         password,
       });
+      setUser(res.data);
       console.log(res.data);
-      // setEmail(res.data.email);
-      // setPassword(res.data.password);
-      setError(false);
+
       navigate("/");
     } catch (error) {
       setError(true);

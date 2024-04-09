@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // Import icons aus dem react icons
 import { BiSearch } from "react-icons/bi";
 import { FaBars } from "react-icons/fa6";
 import Menu from "../menu/Menu";
+import { UserHookContext } from "../../context/userContext";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -12,7 +13,8 @@ const Navbar = () => {
   const showMenu = () => {
     setMenu(!menu);
   };
-  const user = false;
+  const { user } = useContext(UserHookContext);
+  console.log(user);
   return (
     <div className="md:sticky md:top-0 bg-gray-200 flex items-center justify-between px-6 py-4 md:px-[200px] ">
       <h1 className="text-lg md:text-x1 font-extrabold">
