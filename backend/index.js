@@ -11,8 +11,19 @@ import commentsRouter from "./src/router/comment.js";
 dotenv.config();
 
 const app = express();
+
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: process.env.FRONTEND_API,
+  credential: true,
+  methods: "GET,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
+//Middelwaers
+app.use(cors(corsOptions));
+// 
 const PORT = process.env.PORT || 3000;
 
 // DB
