@@ -16,13 +16,18 @@ const Login = () => {
   // Submit Form Functionality
   const handelLogin = async () => {
     try {
-      const res = await axios.post(`${URL}/api/auth/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${URL}/api/auth/login`,
+        {
+          email,
+          password,
+        },
+        // token anzeiegn. auf True gesetzt
+        { withCredentials: true }
+      );
       setUser(res.data);
       console.log(res.data);
-
+      setError(false);
       navigate("/");
     } catch (error) {
       setError(true);

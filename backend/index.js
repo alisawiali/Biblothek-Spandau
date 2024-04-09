@@ -16,7 +16,7 @@ app.use(express.json());
 
 const corsOptions = {
   origin: process.env.FRONTEND_API,
-  credential: true,
+  credentials: true,
   methods: "GET,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
