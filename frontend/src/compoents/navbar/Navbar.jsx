@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // Import icons aus dem react icons
 import { BiSearch } from "react-icons/bi";
 import { FaBars } from "react-icons/fa6";
+import Menu from "../menu/Menu";
 
 const Navbar = () => {
+  const [menu, setMenu] = useState(false);
+
+  const showMenu = () => {
+    setMenu(!menu);
+  };
   const user = false;
   return (
     <div className="md:sticky md:top-0 bg-gray-200 flex items-center justify-between px-6 py-4 md:px-[200px] ">
@@ -34,17 +40,23 @@ const Navbar = () => {
           </h3>
         )}
         {user ? (
-          <h3>Profile</h3>
+          <div onClick={showMenu} className="">
+            <p>
+              <FaBars className="cursor-pointer relative" />
+            </p>
+            {menu && <Menu />}
+          </div>
         ) : (
           <h3>
             <NavLink to="/register">Register</NavLink>
           </h3>
         )}
       </div>
-      <div className="md:hidden">
+      <div onClick={showMenu} className="md:hidden text-lg">
         <p>
-          <FaBars />
+          <FaBars className="cursor-pointer relative" />
         </p>
+        {menu && <Menu />}
       </div>
     </div>
   );
