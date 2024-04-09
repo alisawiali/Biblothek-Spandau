@@ -7,13 +7,12 @@ export const UserHookContext = createContext({});
 export const CreateContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  // Funktion zum Abrufen des Benutzers vom Server zum refrecht
   const getUser = async () => {
     try {
       const res = await axios.get(`${URL}/api/auth/refetch`, {
-        // Mit 'withCredentials: true' teilen wir dem Browser mit, Cookies im Anfrageheader einzuschließe
         withCredentials: true,
       });
-      console.log("USER IS", res.data);
       setUser(res.data);
     } catch (error) {
       console.log(error);

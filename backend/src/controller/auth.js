@@ -39,7 +39,7 @@ export const login = async (req, res, next) => {
       { id: user._id, username: user.username, email: user.email },
       process.env.SECRET_KEY,
       {
-        expiresIn: "3m", //  Das Token läuft nach 3 Monat ab
+        expiresIn: "6m", //  Das Token läuft nach 3 Monat ab
       }
     );
     const { password, ...info } = user._doc;
@@ -62,9 +62,11 @@ export const logout = (req, res, next) => {
     next(error.message);
   }
 };
-// Funktion zum Abrufen des Benutzers vom Server
+
 //  REFETCH USER
+// Controller-Funktion zum Aktualisieren der Benutzerdaten anhand des Tokens im Cookie
 export const refechUser = async (req, res, next) => {
+  // Das Token aus dem Cookie oder ein leeres Objekt abrufen
   const token = req.cookies.token || {};
   jwt.verify(token, process.env.SECRET_KEY, {}, async (err, data) => {
     if (err) {
