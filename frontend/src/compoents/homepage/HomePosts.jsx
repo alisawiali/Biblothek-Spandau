@@ -20,7 +20,7 @@ const HomePosts = ({ post }) => {
           </div>
         </div>
         {/*  slice um den text */}
-        <div className="flex">
+        <div className="flex ">
           <p className="text-sm my-4">{post.desc.slice(0, 200)}</p>
           <p className="text-xs"> ...Read more</p>
         </div>

@@ -8,11 +8,11 @@ import Menu from "../menu/Menu";
 import { UserHookContext } from "../../context/userContext";
 
 const Navbar = () => {
-  const [prompt, setPrompt] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
 
-  console.log(prompt);
+  // console.log(prompt);
   const showMenu = () => {
     setMenu(!menu);
   };
@@ -27,14 +27,12 @@ const Navbar = () => {
       <div className="flex items-center jsutify-center space-x-2 md:space-x-4">
         <p>
           <BiSearch
-            onClick={() =>
-              navigate(prompt ? "?serach" + prompt : navigate("/"))
-            }
+            onClick={() => navigate(`?search=${searchTerm}`)}
             className="cursor-pointer"
           />
         </p>
         <input
-          onChange={(e) => setPrompt(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="outline-none px-0 text-1 pl-2 rounded-lg "
           type="text"
           placeholder="Search a post"
