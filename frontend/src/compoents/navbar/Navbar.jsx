@@ -11,6 +11,7 @@ const Navbar = () => {
   const [prompt, setPrompt] = useState("");
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
+
   console.log(prompt);
   const showMenu = () => {
     setMenu(!menu);
