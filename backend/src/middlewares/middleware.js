@@ -13,7 +13,6 @@ export const verifyToken = (req, res, next) => {
     }
     // Annahme: Die Benutzer-ID ist in den Token-Daten enthalten
     req.userId = data.id;
-    console.log("passed");
     next();
   });
 };

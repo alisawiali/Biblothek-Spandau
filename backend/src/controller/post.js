@@ -3,9 +3,9 @@ import Post from "../model/Post.js";
 // CREATE NEW POST
 export const addPost = async (req, res, next) => {
   try {
-    //  const post = await Post.create(req.body);
-    const newPost = await Post(req.body);
-    const savePost = await newPost.save();
+    const savePost = await Post.create(req.body);
+    // const newPost = await Post(req.body);
+    // const savePost = await newPost.save();
     res.status(200).send(savePost);
   } catch (error) {
     next(error);
@@ -64,13 +64,13 @@ export const getAllPosts = async (req, res, next) => {
       // Überprüfen, ob die Suchanfrage vorhanden ist
       searchFilter = { title: { $regex: searchPost, $options: "i" } }; // Filter entsprechend setzen
     }
-
     const posts = await Post.find(searchFilter); // MongoDB-Abfrage mit dem Filter ausführen
-    res.status(200).send(posts); // Erfolgreiche Antwort senden
+    res.status(200).send(posts);
   } catch (error) {
-    next(error); // Fehler an den Fehlerbehandlungs-Middleware weitergeben
+    next(error);
   }
 };
+
 
 // GET USER  COMMENT
 export const getUserId = async (req, res, next) => {
