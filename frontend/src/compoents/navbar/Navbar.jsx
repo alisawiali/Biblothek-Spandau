@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // Import icons aus dem react icons
 import { BiSearch } from "react-icons/bi";
@@ -8,11 +8,14 @@ import Menu from "../menu/Menu";
 import { UserHookContext } from "../../context/userContext";
 
 const Navbar = () => {
+  const [prompt, setPrompt] = useState("");
   const [menu, setMenu] = useState(false);
-
+  const navigate = useNavigate();
+  console.log(prompt);
   const showMenu = () => {
     setMenu(!menu);
   };
+  //  use state
   const { user } = useContext(UserHookContext);
 
   return (
@@ -22,9 +25,15 @@ const Navbar = () => {
       </h1>
       <div className="flex items-center jsutify-center space-x-2 md:space-x-4">
         <p>
-          <BiSearch />
+          <BiSearch
+            onClick={() =>
+              navigate(prompt ? "?serach" + prompt : navigate("/"))
+            }
+            className="cursor-pointer"
+          />
         </p>
         <input
+          onChange={(e) => setPrompt(e.target.value)}
           className="outline-none px-0 text-1 pl-2 rounded-lg "
           type="text"
           placeholder="Search a post"

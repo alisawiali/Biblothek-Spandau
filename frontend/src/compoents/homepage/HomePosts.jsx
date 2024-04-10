@@ -15,15 +15,14 @@ const HomePosts = ({ post }) => {
         <div className="flex mb-2 text-sm font-semibold text-gray-500 items-center justify-between mb:mb-4">
           <p>{post.username}</p>
           <div className="flex space-x-2">
-            <p>{new Date(post.updatedAt).toString().slice(3, 10)}</p>
-            <p>{new Date(post.updatedAt).toString().slice(15, 24)}</p>
+            <p>{new Date(post.updatedAt).toString().slice(3, 15)}</p>
+            <p>{new Date(post.updatedAt).toString().slice(15, 15)}</p>
           </div>
         </div>
         {/*  slice um den text */}
-        <div className="">
-          <p className="text-sm my-4">
-            {post.desc.slice(0, 200) + "...Read more"}
-          </p>
+        <div className="flex">
+          <p className="text-sm my-4">{post.desc.slice(0, 200)}</p>
+          <p className="text-xs"> ...Read more</p>
         </div>
       </div>
     </div>
