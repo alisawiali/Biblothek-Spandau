@@ -7,14 +7,20 @@ import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const { search } = useLocation();
-  console.log(search);
   const [post, setPost] = useState([]);
+  //
+  const [noResult, setNoResult] = useState(false);
 
   // console.log(search);
   const fetchPost = async () => {
     try {
       const res = await axios.get(`${URL}/api/posts${search}`);
       setPost(res.data);
+      if (res.data.length === 0) {
+        setNoResult(true);
+      } else {
+        setNoResult(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -26,10 +32,14 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="px-8 md:px-[100px] py-4 min-h[80vh]">
-        {post?.map((post) => (
-          <HomePosts key={post._id} post={post} />
-        ))}
+      <div className="px-8 md:px-[100px] py-4 min-h-[70vh]">
+        {!noResult ? (
+          post?.map((post) => <HomePosts key={post._id} post={post} />)
+        ) : (
+          <h3 className="text-center text-red-500 font-bold mt-16">
+            No Posts available
+          </h3>
+        )}
       </div>
       <Footer />
     </>
