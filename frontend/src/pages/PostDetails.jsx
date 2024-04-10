@@ -18,10 +18,10 @@ const PostDetails = () => {
           </h1>
           <div className="flex justify-center items-center space-x-2">
             <p>
-              <BiEdit />
+              <BiEdit className="cursor-pointer hover:scale-150 transition-all" />
             </p>
             <p>
-              <MdDelete />
+              <MdDelete className="cursor-pointer hover:scale-150  transition-all" />
             </p>
           </div>
         </div>
