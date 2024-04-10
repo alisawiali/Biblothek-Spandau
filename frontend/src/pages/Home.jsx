@@ -16,6 +16,7 @@ const Home = () => {
     try {
       const res = await axios.get(`${URL}/api/posts${search}`);
       setPost(res.data);
+      //  wenn suche nicht stattfindet ist dann false legen sonst true
       if (res.data.length === 0) {
         setNoResult(true);
       } else {
