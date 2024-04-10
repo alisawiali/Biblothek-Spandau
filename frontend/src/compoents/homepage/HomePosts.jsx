@@ -1,5 +1,6 @@
 import React from "react";
 import imgBook from "../../assets/books.png";
+import { NavLink } from "react-router-dom";
 const HomePosts = ({ post }) => {
   return (
     <div className="w-full flex mt-8 space-x-2 flex-col md:flex-row myt-8  space-y-4 md:space-y-0 md:space-x-2">
@@ -20,9 +21,11 @@ const HomePosts = ({ post }) => {
           </div>
         </div>
         {/*  slice um den text */}
-        <div className="flex ">
-          <p className="text-sm my-4">{post.desc.slice(0, 200)}</p>
-          <p className="text-xs"> ...Read more</p>
+        <div className="">
+          <p className="text-sm my-4">
+            {post.desc.slice(0, 200)}
+            <NavLink className="text-blue-500 text-xs"> ...Read more"</NavLink>
+          </p>
         </div>
       </div>
     </div>
