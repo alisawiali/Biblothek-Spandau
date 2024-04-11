@@ -14,7 +14,7 @@ const Home = () => {
   const [loader, setLoader] = useState(false);
   //
   const { user } = useContext(UserHookContext);
-  console.log(user);
+
   const fetchPost = async () => {
     setLoader(true);
     try {
