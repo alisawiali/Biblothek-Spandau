@@ -5,9 +5,12 @@ import { Comment, Footer, Navbar } from "../compoents/UL";
 //  Import icons aus dem react icons
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+import { useParams } from "react-router-dom";
 
-// 
+//
 const PostDetails = () => {
+  const postId = useParams();
+  console.log(postId);
   return (
     <div>
       <Navbar />
@@ -26,7 +29,7 @@ const PostDetails = () => {
           </div>
         </div>
         <div className="flex items.center justify-between mt-2 md:mt-4 text-gray-400">
-          <p>@snehasishdev</p>
+          <p>@Imad</p>
           <div className="flex space-x-2">
             <p>16/03/2024</p>
             <p>23:41</p>
