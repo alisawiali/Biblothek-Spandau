@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="w-full bg-gray-900 text-white mt-8 px-2 md:px-[200px] flex md:flex-row flex-col text-center space-y-4 md:space-y-0  md:justify-between text-sm md:text-md py-8 md:mt-8">
+      <div className="w-full bg-gray-900 text-white mt-8 px-2 md:px-[400px] flex md:flex-row flex-col text-center space-y-4 md:space-y-0  md:justify-between text-sm md:text-md py-8 md:mt-8">
         <div className="flex flex-col text-white">
           <p>Bibliothek</p>
           <p>Meist gelesen</p>
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="text-center bg-gray-900 text-white pb-4  py-4 text-sm">
+      <p className="text-center bg-gray-900 text-white pb-b  py-4 text-sm">
         All rights reserved &copy; Bibliothek Markt 2024
       </p>
     </>
