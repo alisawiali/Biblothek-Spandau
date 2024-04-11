@@ -37,6 +37,20 @@ app.use("/api/user", userRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/comments", commentsRouter); 
 
+
+// image unpload Middlewares
+const storage = multer.diskStorage({
+  destination: (req, file, fn) => {
+    fn(null,"images")
+  },
+  filename: (req, file, fn) => {
+    fn(null,req.body.img)
+  }
+})
+const upload = multer({ storage: storage })
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("Image has been uploaded successfully")
+})
 // Server starten
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);

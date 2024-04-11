@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 // Import icons aus dem react icons
 import { BiSearch } from "react-icons/bi";
@@ -11,7 +11,8 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
-
+  const pathnamePar = useLocation().pathname;
+  console.log(pathnamePar);
   // console.log(prompt);
   const showMenu = () => {
     setMenu(!menu);
@@ -24,20 +25,22 @@ const Navbar = () => {
       <h1 className="text-lg md:text-x1 font-extrabold">
         <NavLink to="/">Bibliothek</NavLink>
       </h1>
-      <div className="flex items-center jsutify-center space-x-2 md:space-x-4">
-        <p>
-          <BiSearch
-            onClick={() => navigate(`?search=${searchTerm}`)}
-            className="cursor-pointer"
+      {pathnamePar === "/" && (
+        <div className="flex items-center jsutify-center space-x-2 md:space-x-4">
+          <p>
+            <BiSearch
+              onClick={() => navigate(`?search=${searchTerm}`)}
+              className="cursor-pointer"
+            />
+          </p>
+          <input
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="outline-none px-0 text-1 pl-2 rounded-lg "
+            type="text"
+            placeholder="Search a post"
           />
-        </p>
-        <input
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="outline-none px-0 text-1 pl-2 rounded-lg "
-          type="text"
-          placeholder="Search a post"
-        />
-      </div>
+        </div>
+      )}
       <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-4 ">
         {/*  wenn den User angemeldet ist dann geht zum write sits */}
         {user ? (

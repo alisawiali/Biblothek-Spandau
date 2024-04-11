@@ -15,7 +15,7 @@ const CreatePost = () => {
   };
   // Funktion zum Hinzufügen einer Kategorie
   const addCategory = () => {
-    //   setCats((prevCats) => [...prevCats, cat]); // Eine neue Kategorie hinzufügen
+    //   setCats((prevCats) => [...prevCats, cat]) setCats((prevent) => [...prevent, cats]); // Eine neue Kategorie hinzufügen
     //   setCat(""); // Kategorie zurücksetzen ODER-------------
     let updateCats = [...cats];
     updateCats.push(cat);
