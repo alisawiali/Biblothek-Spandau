@@ -47,7 +47,7 @@ const Home = () => {
         ) : !noResult ? (
           post?.map((post) => (
             <div key={post._id}>
-              <NavLink to={user ? `/posts/post${post._id}` : "/login"}>
+              <NavLink to={user ? `/posts/post/${post._id}` : "/login"}>
                 <HomePosts key={post._id} post={post} />
               </NavLink>
             </div>
