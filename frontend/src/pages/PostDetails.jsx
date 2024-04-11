@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Import img aus  assets
 import img from "../assets/bibliothek-3.jpeg";
 import { Comment, Footer, Navbar } from "../compoents/UL";
@@ -6,18 +6,34 @@ import { Comment, Footer, Navbar } from "../compoents/UL";
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import { URL } from "../url";
 
 //
 const PostDetails = () => {
-  const postId = useParams();
+  //
+  const postId = useParams().id;
+  const [post, setPost] = useState({});
   console.log(postId);
+  const fetchPost = async () => {
+    try {
+      const res = await axios.get(`${URL}/api/posts/${postId}`);
+      console.log(res.data);
+      setPost(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchPost();
+  }, [postId]);
   return (
     <div>
       <Navbar />
       <div className="px-8 md:px-[200px] mt-8">
         <div className="flex justify-between items-center">
           <h1 className="text-2x1 font-bold text-black md:text-3x1">
-            10 Uses of artifcial intelliganze in Day to Day Life
+            {post.title}
           </h1>
           <div className="flex justify-center items-center space-x-2">
             <p>
@@ -29,30 +45,24 @@ const PostDetails = () => {
           </div>
         </div>
         <div className="flex items.center justify-between mt-2 md:mt-4 text-gray-400">
-          <p>@Imad</p>
+          <p>{post.username}</p>
           <div className="flex space-x-2">
-            <p>16/03/2024</p>
-            <p>23:41</p>
+            <p>{new Date(post.updatedAt).toString().slice(3, 10)}</p>
+            <p>{new Date(post.updatedAt).toString().slice(10, 25)}</p>
           </div>
         </div>
         <img src={img} className="w-full mx-auto mt-8 rounded-2xl" alt="" />
-        <p className="mx-auto mt-8">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
-          aliquid beatae eos sed unde architecto fugit saepe est, similique ipsa
-          tempora omnis, labore id numquam quidem pariatur in quae odit. Eos
-          blanditiis dolorum id distinctio, quod animi? Iure voluptatum dicta
-          at, provident dolorem velit natus sint aspernatur, quisquam iusto
-          recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Amet sapiente porro minima molestiae quidem officia eligendi sunt ab
-          doloremque alias, ipsa placeat itaque, ea nam corrupti. Libero, error
-          consequuntur. Eveniet deserunt blanditiis iste, officiis consequuntur
-          neque ratione laborum dicta voluptas at perferendis repellat
-          cupiditate ullam voluptate, numquam labore corporis accusantium.
-        </p>
+        <p className="mx-auto mt-8">{post.desc}</p>
         <div className="flex items-center mt-8 space-x-4 font-semibold">
           <p>Categories: </p>
           <div className="flex justify-center items-center space-x-3">
-            <div className="bg-gray-300 rounded-lg px-3 py-1 ">Tech</div>
+            <div className="flex items-center rounded-lg px-3 py-1 space-x-2">
+              {post.categories?.map((category, id) => (
+                <div key={id} className="bg-gray-300 rounded-lg px-3 py-1">
+                  {category}
+                </div>
+              ))}
+            </div>
             <div className="bg-gray-300 rounded-lg px-3 py-1 ">Ai</div>
           </div>
         </div>
@@ -80,5 +90,5 @@ const PostDetails = () => {
     </div>
   );
 };
-  
+
 export default PostDetails;
