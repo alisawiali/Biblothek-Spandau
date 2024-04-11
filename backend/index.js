@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import multer from "multer";
 import { connectDB } from "./service/db.js";
 import cookieParser from "cookie-parser";
 import authRouter from "./src/router/auth.js";
