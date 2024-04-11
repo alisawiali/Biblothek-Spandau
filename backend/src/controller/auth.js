@@ -36,7 +36,7 @@ export const login = async (req, res, next) => {
       return res.status(400).send("Wroung credentials");
     }
     const token = jwt.sign(
-      { id: user._id, username: user.username, email: user.email },
+      { _id: user._id, username: user.username, email: user.email },
       process.env.SECRET_KEY,
       {
         expiresIn: "6m", //  Das Token läuft nach 3 Monat ab

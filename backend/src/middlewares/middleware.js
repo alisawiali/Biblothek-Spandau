@@ -12,7 +12,7 @@ export const verifyToken = (req, res, next) => {
       return res.status(403).json("Token is not Vaild");
     }
     // Annahme: Die Benutzer-ID ist in den Token-Daten enthalten
-    req.userId = data.id;
+    req.userId = data._id;
     next();
   });
 };
