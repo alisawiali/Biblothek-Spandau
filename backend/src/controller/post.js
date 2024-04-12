@@ -1,3 +1,4 @@
+import Comment from "../model/Comment.js";
 import Post from "../model/Post.js";
 
 // CREATE NEW POST
@@ -33,7 +34,8 @@ export const updatePost = async (req, res, next) => {
 export const deletPost = async (req, res, next) => {
   try {
     const deletedIdPost = await Post.findByIdAndDelete(req.params.id);
-    if (!deletedIdPost) {
+    const deletPostId = await Comment.deleteMany({ postId: req.params.id });
+    if (!deletedIdPost || deletPostId) {
       res.status(404).send(`${deletedIdPost} Not Found`);
     }
     res.status(200).send(` Deleted Successfully!`);
@@ -70,7 +72,6 @@ export const getAllPosts = async (req, res, next) => {
     next(error);
   }
 };
-
 
 // GET USER  COMMENT
 export const getUserId = async (req, res, next) => {

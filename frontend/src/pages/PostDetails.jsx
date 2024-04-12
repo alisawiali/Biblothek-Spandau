@@ -31,6 +31,18 @@ const PostDetails = () => {
   useEffect(() => {
     fetchPost();
   }, [postId]);
+
+  // delet id Post
+  const handelDeletPost = async () => {
+    try {
+      const res = await axios.delete(`${URL}/api/posts`);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //
+
   return (
     <div>
       <Navbar />
@@ -50,7 +62,10 @@ const PostDetails = () => {
                   <BiEdit className="cursor-pointer " />
                 </p>
                 <p>
-                  <MdDelete className="cursor-pointer " />
+                  <MdDelete
+                    className="cursor-pointer "
+                    onClick={handelDeletPost}
+                  />
                 </p>
               </div>
             )}
