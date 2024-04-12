@@ -33,12 +33,11 @@ export const updatePost = async (req, res, next) => {
 // DELETED POST ID
 export const deletPost = async (req, res, next) => {
   try {
-    const deletedIdPost = await Post.findByIdAndDelete(req.params.id);
-    const deletPostId = await Comment.deleteMany({ postId: req.params.id });
-    if (!deletedIdPost || deletPostId) {
-      res.status(404).send(`${deletedIdPost} Not Found`);
-    }
-    res.status(200).send(` Deleted Successfully!`);
+    await Post.findByIdAndDelete(req.params.id);
+    await Comment.deleteMany({ postId: req.params.id });
+
+    res.status(200).send(`Post has  Deleted Successfully!`);
+
   } catch (error) {
     next(error);
   }
