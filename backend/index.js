@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import multer from "multer";
+import path from "path";
+
 import { connectDB } from "./service/db.js";
 import cookieParser from "cookie-parser";
 import authRouter from "./src/router/auth.js";
@@ -35,23 +37,25 @@ app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/posts", postRouter);
-app.use("/api/comments", commentsRouter); 
+app.use("/api/comments", commentsRouter);
 
+// Aktualisierte Pfadberechnung für das Bilder-Verzeichnis
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+app.use("/images", express.static(path.join(__dirname, "/images"))); // Bilder auslesbar machen
 
 // image unpload Middlewares
 const storage = multer.diskStorage({
   destination: (req, file, fn) => {
-    fn(null,"images")
+    fn(null, "images");
   },
   filename: (req, file, fn) => {
     fn(null, req.body.img);
-    // fn(null, file.originalname);
-  }
-})
-const upload = multer({ storage: storage })
+  },
+});
+const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("Image has been uploaded successfully")
-})
+  res.status(200).json("Image has been uploaded successfully");
+});
 // Server starten
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
