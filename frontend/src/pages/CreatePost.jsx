@@ -17,56 +17,55 @@ const CreatePost = () => {
   const [cat, setCat] = useState("");
   const [cats, setCats] = useState([]);
   const navigate = useNavigate();
-console.log(file);
-const deleteCategory = (item) => {
-  const updatedCats = cats.filter((c, i) => i !== item);
-  setCats(updatedCats);
-};
-// Funktion zum Hinzufügen einer Kategorie
-const addCategory = () => {
-  //   setCats((prevCats) => [...prevCats, cat]) setCats((prevent) => [...prevent, cats]); // Eine neue Kategorie hinzufügen
-  //   setCat(""); // Kategorie zurücksetzen ODER-------------
-  let updateCats = [...cats];
-  updateCats.push(cat);
-  setCat("");
-  setCats(updateCats);
-};
-
-const handleCreate = async (e) => {
-  e.preventDefault();
-  const post = {
-    title,
-    desc,
-    username: user.username,
-    userId: user._id,
-    categories: cats,
+  const deleteCategory = (item) => {
+    const updatedCats = cats.filter((c, i) => i !== item);
+    setCats(updatedCats);
   };
-  if (file) {
-    const data = new FormData();
-    const filename = Date.now() + file.name;
-    data.append("img", filename);
-    data.append("file", file);
-    post.photo = filename;
-    console.log(data);
-    // Img Upload
-    try {
-      const imgUpload = await axios.post(`${URL}/api/upload`, data);
+  // Funktion zum Hinzufügen einer Kategorie
+  const addCategory = () => {
+    //   setCats((prevCats) => [...prevCats, cat]) setCats((prevent) => [...prevent, cats]); // Eine neue Kategorie hinzufügen
+    //   setCat(""); // Kategorie zurücksetzen ODER-------------
+    let updateCats = [...cats];
+    updateCats.push(cat);
+    setCat("");
+    setCats(updateCats);
+  };
 
-      // console.log(imgUpload);
+  const handleCreate = async (e) => {
+    e.preventDefault();
+    const post = {
+      title,
+      desc,
+      username: user.username,
+      userId: user._id,
+      categories: cats,
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("img", filename);
+      data.append("file", file);
+      post.photo = filename;
+      console.log(data);
+      // Img Upload
+      try {
+        const imgUpload = await axios.post(`${URL}/api/upload`, data);
+        console.log(imgUpload);
+        // console.log(imgUpload);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    //Post Upload
+    try {
+      const res = await axios.post(`${URL}/api/posts/create`, post, {
+        withCredentials: true,
+      });
+      navigate("/posts/post/" + res.data._id);
     } catch (error) {
       console.log(error);
     }
-  }
-  //Post Upload
-  try {
-    const res = await axios.post(`${URL}/api/posts/create`, post, {
-      withCredentials: true,
-    });
-    navigate("/posts/post/" + res.data._id);
-  } catch (error) {
-    console.log(error);
-  }
-};
+  };
 
   return (
     <div>

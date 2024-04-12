@@ -4,7 +4,7 @@ import { Comment, Footer, Loader, Navbar } from "../compoents/UL";
 //  Import icons aus dem react icons
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { URL, IF } from "../url";
 import { UserHookContext } from "../context/userContext";
@@ -15,8 +15,9 @@ const PostDetails = () => {
   const postId = useParams().id;
   const [post, setPost] = useState({});
   const { user } = useContext(UserHookContext);
-
   const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
+  //
   const fetchPost = async () => {
     setLoader(true);
     try {
@@ -35,7 +36,11 @@ const PostDetails = () => {
   // delet id Post
   const handelDeletPost = async () => {
     try {
-      const res = await axios.delete(`${URL}/api/posts`);
+      const res = await axios.delete(`${URL}/api/posts/` + postId, {
+        withCredentials: true,
+      });
+
+      navigate("/");
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -59,7 +64,10 @@ const PostDetails = () => {
             {user?._id === post?.userId && (
               <div className="flex justify-center items-center space-x-2">
                 <p>
-                  <BiEdit className="cursor-pointer " />
+                  <BiEdit
+                    className="cursor-pointer "
+                    onClick={() => navigate("/edit/" + postId)}
+                  />
                 </p>
                 <p>
                   <MdDelete
