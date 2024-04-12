@@ -12,7 +12,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
   const pathnamePar = useLocation().pathname;
-  console.log(pathnamePar);
+  // console.log(pathnamePar);
   // console.log(prompt);
   const showMenu = () => {
     setMenu(!menu);

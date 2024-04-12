@@ -1,12 +1,14 @@
 import React from "react";
 import imgBook from "../../assets/books.png";
 import { NavLink } from "react-router-dom";
+import { IF } from "../../url";
+
 const HomePosts = ({ post }) => {
   return (
     <div className="w-full flex mt-8 space-x-2 flex-col md:flex-row myt-8  space-y-4 md:space-y-0 md:space-x-2">
       {/* left */}
       <div className="flex md:w-1/3 h-[200px] justify-center items-center">
-        <img src={post.photo} alt="" className="h-full w-full" />
+        <img src={IF + post.photo} alt="" className="h-full w-full" />
       </div>
       {/* right */}
       <div className="flex flex-col md:w-2/3 ">

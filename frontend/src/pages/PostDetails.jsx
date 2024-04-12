@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-// Import img aus  assets
-import img from "../assets/bibliothek-3.jpeg";
+
 import { Comment, Footer, Loader, Navbar } from "../compoents/UL";
 //  Import icons aus dem react icons
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { URL } from "../url";
+import { URL, IF } from "../url";
 import { UserHookContext } from "../context/userContext";
 
 //
@@ -64,7 +63,7 @@ const PostDetails = () => {
             </div>
           </div>
           <img
-            src={post.photo}
+            src={IF + post.photo}
             className="w-full mx-auto mt-8 rounded-2xl"
             alt=""
           />
