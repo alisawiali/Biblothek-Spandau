@@ -17,6 +17,7 @@ const PostDetails = () => {
   const { user } = useContext(UserHookContext);
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
+  const [comment, setCommment] = useState([]);
   //
   const fetchPost = async () => {
     setLoader(true);
@@ -47,7 +48,19 @@ const PostDetails = () => {
     }
   };
   //
-
+  const fetchPostComment = async () => {
+    try {
+      const res = await axios.get(`${URL}/api/comments/post/` + postId, {
+        withCredentials: true,
+      });
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchPostComment();
+  }, [postId]);
   return (
     <div>
       <Navbar />
@@ -107,10 +120,9 @@ const PostDetails = () => {
           <div className="flex flex-col mt-4">
             <h3 className="mt-6 mb-4 font-semibold ">comments:</h3>
             {/*  (write a comment component)  */}
-            <Comment />
-            <Comment />
-            <Comment />
-            <Comment />
+            {comment?.map((item) => (
+              <Comment key={item._id} item={item} />
+            ))}
           </div>
           {/* write a comment  */}
           <div className="w-full flex flex-col mt-4 md:flex-row">
