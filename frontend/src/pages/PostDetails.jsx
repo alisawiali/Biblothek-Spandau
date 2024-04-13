@@ -54,6 +54,7 @@ const PostDetails = () => {
         withCredentials: true,
       });
       console.log(res.data);
+      setCommment(res.data);
     } catch (error) {
       console.log(error);
     }
