@@ -59,6 +59,7 @@ const PostDetails = () => {
       console.log(error);
     }
   };
+  und;
   useEffect(() => {
     fetchPostComment();
   }, [postId]);
