@@ -35,7 +35,7 @@ app.use(cookieParser());
 
 // Middleware vor den Routen
 app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
+app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/comments", commentsRouter);
 
@@ -57,10 +57,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("Image has been uploaded successfully");
 });
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Internal Server Error");
-});
+
 // Server starten
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
