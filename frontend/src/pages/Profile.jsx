@@ -68,8 +68,8 @@ const Profile = () => {
           <ProfilePost />
         </div>
         {/* right */}
-        <div className="md:top-12  z-0 md:w-[30%] w-full ">
-          <div className="  flex flex-col space-y-4 items-center bg-gray-100  ml-4 p-2 rounded-sm mt-8">
+        <div className="mt-12 md:w-[30%] w-full ">
+          <div className="  flex flex-col space-y-4 items-center bg-gray-100  ml-4 p-2 rounded-sm mt-8 ">
             <h1 className="text-xl  font-bold mb-4">Profile</h1>
             <input
               onChange={(e) => setUsername(e.target.value)}
@@ -103,7 +103,7 @@ const Profile = () => {
                 onClick={handeUserDeelet}
                 className="text-white font-semibold bg-black px-4 py-2 hover:text-white hover:bg-gray-700 ease-in duration-300 rounded hover:rounded-lg"
               >
-                Update
+                Delet
               </button>
             </div>
           </div>
