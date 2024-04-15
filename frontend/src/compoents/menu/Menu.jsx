@@ -54,7 +54,9 @@ const Menu = () => {
         <h3
           onClick={handelLogout}
           className="text-white text-sm hover:text-gray-500 cursor-pointer"
-        ></h3>
+        >
+          Logout
+        </h3>
       )}
     </div>
   );
