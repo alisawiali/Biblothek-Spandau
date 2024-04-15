@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <div>
       <Navbar />
-      <div className="px-8 md:[200px] mt-12 flex flex-col-reverse md:flex-row  md:items-start">
+      <div className="px-8 md:[200px] mt-12 flex flex-col-reverse md:flex-row  md:items-start ">
         {/* left */}
         <div className="flex flex-col md:w-[70%] w-full items-center mt-8">
           <h1 className="text-xl font-bold mb-4 ">Your posts</h1>
@@ -17,7 +17,7 @@ const Profile = () => {
           <ProfilePost />
         </div>
         {/* right */}
-        <div className="md:sticky md:top-16  md:w-[30%] w-full ">
+        <div className=" mt-8  md:w-[30%] w-full z-none">
           <div className="flex flex-col space-y-4 items-center bg-gray-100  ml-4 p-2 rounded-sm">
             <h1 className="text-xl font-bold mb-4">Profile</h1>
             <input

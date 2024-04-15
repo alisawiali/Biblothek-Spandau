@@ -4,6 +4,7 @@ import {
   EdidtPost,
   Home,
   Login,
+  MyBloge,
   PostDetails,
   Profile,
   Register,
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/write" element={<CreatePost />} />
           <Route path="/posts/post/:id" element={<PostDetails />} />
           <Route path="/edit/:id" element={<EdidtPost />} />
+          <Route path="/myblogs/:id" element={<MyBloge />} />
           <Route path="/profile/:id" element={<Profile />} />
         </Routes>
       </CreateContextProvider>

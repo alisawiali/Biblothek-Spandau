@@ -24,7 +24,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="bg-black w-[200px] flex flex-col items-start absolute md:right-32 top-12 right-6 p-4 rounded-md space-y-4">
+    <div className="bg-black w-[200px] flex-b z-[100] flex flex-col items-start absolute md:right-32 top-12 right-6 p-4 rounded-md space-y-4">
       {!user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
           <NavLink to="/login"> Login</NavLink>
@@ -37,26 +37,24 @@ const Menu = () => {
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          Profile
+          <NavLink to={"/profile/" + user._id}> Profile</NavLink>
         </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          Write
+          <NavLink to="/write"> Write</NavLink>
         </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          My Bücher
+          <NavLink to={"/myblogs/" + user._id}> My blogs</NavLink>
         </h3>
       )}
       {user && (
         <h3
           onClick={handelLogout}
           className="text-white text-sm hover:text-gray-500 cursor-pointer"
-        >
-          Logout
-        </h3>
+        ></h3>
       )}
     </div>
   );
