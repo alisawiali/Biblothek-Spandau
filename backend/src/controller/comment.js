@@ -3,17 +3,15 @@ import bcrypt from "bcryptjs";
 import Post from "../model/Post.js";
 import Comment from "../model/Comment.js";
 
-// CREATE NEW POST
 export const addComment = async (req, res, next) => {
   try {
-    const newComment = await Comment(req.body);
-    const saveComment = await newComment.save();
-    res.status(200).send(saveComment);
+    // Erstelle einen neuen Kommentar
+    const newComment = await Comment.create(req.body);
+    res.status(200).send(newComment);
   } catch (error) {
     next(error);
   }
 };
-
 // UPDAT POST
 export const updateComment = async (req, res, next) => {
   try {
@@ -47,7 +45,7 @@ export const deletComment = async (req, res, next) => {
 // GET POST COMMENT
 export const getCommentId = async (req, res, next) => {
   try {
-    //    userId findet sich im Model(commentSchema)
+    //    postId findet sich im Model(commentSchema)
     const coments = await Comment.find({ postId: req.params.postId });
 
     res.status(200).send(coments);

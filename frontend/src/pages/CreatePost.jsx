@@ -46,7 +46,7 @@ const CreatePost = () => {
       data.append("img", filename);
       data.append("file", file);
       post.photo = filename;
-      console.log(data);
+      // console.log(data);
       // Img Upload
       try {
         const imgUpload = await axios.post(`${URL}/api/upload`, data);

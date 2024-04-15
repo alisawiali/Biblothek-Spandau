@@ -39,7 +39,7 @@ export const login = async (req, res, next) => {
       { _id: user._id, username: user.username, email: user.email },
       process.env.SECRET_KEY,
       {
-        expiresIn: "6m", //  Das Token läuft nach 3 Monat ab
+        expiresIn: "60d", //  Das Token läuft nach 60  Tagen ab
       }
     );
     const { password, ...info } = user._doc;

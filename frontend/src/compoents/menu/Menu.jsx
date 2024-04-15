@@ -8,6 +8,7 @@ const Menu = () => {
   const { user } = useContext(UserHookContext);
   const [error, setError] = useState(false);
   const { setUser } = useContext(UserHookContext);
+  const navigate = useNavigate();
 
   const handelLogout = async () => {
     try {
@@ -16,6 +17,7 @@ const Menu = () => {
       });
       console.log(res.data);
       setUser(null);
+      navigate("/");
     } catch (error) {
       setError(true);
     }

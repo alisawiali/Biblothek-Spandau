@@ -11,17 +11,17 @@ const commentSchema = new Schema(
     author: {
       type: String,
       required: true,
-      unique: true,
     },
     postId: {
       type: String,
       required: true,
     },
-    usertId: {
+    userId: {
       type: String,
       required: true,
     },
   },
   { timestamps: true }
 );
+
 export default mongoose.model("Comment", commentSchema);

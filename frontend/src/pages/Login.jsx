@@ -26,7 +26,6 @@ const Login = () => {
         { withCredentials: true }
       );
       setUser(res.data);
-
       setError(false);
       navigate("/");
     } catch (error) {

@@ -13,14 +13,11 @@ const Comment = ({ item }) => {
             {new Date(item.updatedAt).toString().slice(3, 10)}
           </p>
           <p className="text-gray-500 text-sm">
-            {new Date(item.updatedAt).toString(15, 25)}
+            <p>{new Date(item.updatedAt).toString().slice(10, 25)}</p>
           </p>
           <div className="flex justify-center items-center space-x-2">
             <p>
-              <BiEdit />
-            </p>
-            <p>
-              <MdDelete />
+              <MdDelete className="cursor-pointer " />
             </p>
           </div>
         </div>
