@@ -42,7 +42,7 @@ const PostDetails = () => {
       const res = await axios.delete(`${URL}/api/posts/` + postId, {
         withCredentials: true,
       });
-
+      console.log(res.data);
       navigate("/");
       // console.log(res.data);
     } catch (error) {
@@ -158,7 +158,7 @@ const PostDetails = () => {
           <div className="w-full flex flex-col mt-4 md:flex-row">
             <input
               onChange={(e) => setComment(e.target.value)}
-              value={comment}
+              // value={comment}
               type="text"
               placeholder="Write a comment"
               className="md:w-[80%] outline-none px-4 py-2 mt-4 md:mt-0"

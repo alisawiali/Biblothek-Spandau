@@ -18,10 +18,7 @@ const Comment = ({ item, post }) => {
       console.log(error);
     }
   };
-  console.log(post.userId);
-  console.log(user._id);
-  console.log(post);
-  console.log(user);
+
   return (
     <div className="px-2 py-2 bg-gray-200 rounded-lg mt-2">
       <div className="flex items-center justify-between">
@@ -40,7 +37,7 @@ const Comment = ({ item, post }) => {
               </p>
             </div>
           ) : (
-            <div className="text-xs ">darf nicht löschen</div>
+            <div className="text-xs ">√</div>
           )}
         </div>
       </div>
