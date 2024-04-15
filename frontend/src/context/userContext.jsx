@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { URL } from "../url";
-const INITIAL_STATE = {};
+// const INITIAL_STATE = {};
 export const UserHookContext = createContext({});
 
 export const CreateContextProvider = ({ children }) => {

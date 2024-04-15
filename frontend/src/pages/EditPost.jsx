@@ -42,7 +42,7 @@ const EditPost = () => {
       // Send a GET request to the server to fetch the post data
       const res = await axios.get(`${URL}/api/posts/` + postId);
       // Aktualisiert den Zustand mit den abgerufenen Postdaten
-      console.log(res.data);
+
       setTitle(res.data.title);
       setDesc(res.data.desc);
       setFile(res.data.photo);
@@ -75,7 +75,7 @@ const EditPost = () => {
       // Img Upload
       try {
         const imgUpload = await axios.post(`${URL}/api/upload`, data);
-        console.log(imgUpload);
+
         // console.log(imgUpload);
       } catch (error) {
         console.log(error);

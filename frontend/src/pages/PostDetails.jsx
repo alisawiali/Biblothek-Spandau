@@ -151,7 +151,7 @@ const PostDetails = () => {
             <h3 className="mt-6 mb-4 font-semibold ">comments:</h3>
             {/*  (write a comment component)  */}
             {comments?.map((item) => (
-              <Comment key={item._id} item={item} />
+              <Comment key={item._id} item={item} post={post} />
             ))}
           </div>
           {/* write a comment  */}
