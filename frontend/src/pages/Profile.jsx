@@ -55,7 +55,6 @@ const Profile = () => {
         withCredentials: true,
       });
       navigate("/");
-      // alert("Account gelöscht!");
       console.log(deletUser.data);
     } catch (error) {
       console.log(error);
