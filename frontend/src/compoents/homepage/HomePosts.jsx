@@ -8,7 +8,11 @@ const HomePosts = ({ post }) => {
     <div className="w-full flex mt-8 space-x-2 flex-col md:flex-row myt-8  space-y-4 md:space-y-0 md:space-x-2">
       {/* left */}
       <div className="flex md:w-1/3 h-[200px] justify-center items-center">
-        <img src={IF + post.photo} alt="" className="h-full w-full" />
+        <img
+          src={IF + post.photo}
+          alt=""
+          className="h-full w-full rounded-lg "
+        />
       </div>
       {/* right */}
       <div className="flex flex-col md:w-2/3 ">
@@ -23,10 +27,12 @@ const HomePosts = ({ post }) => {
           </div>
         </div>
         {/*  slice um den text */}
-        <div className="">
-          <p className="text-sm my-4">
-            {post.desc.slice(0, 200)}
-            <NavLink className="text-blue-500 text-xs"> ...Read more"</NavLink>
+        <div className="w-[800px]">
+          <p className="text-sm  p-4">
+            {post.desc.slice(0, 250)}
+            <NavLink className="text-blue-500 text-xs cursor-pointer">
+              ...Read more"
+            </NavLink>
           </p>
         </div>
       </div>

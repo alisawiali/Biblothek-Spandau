@@ -122,7 +122,7 @@ const PostDetails = () => {
             )}
           </div>
           <div className="flex items.center justify-between mt-2 md:mt-4 text-gray-400">
-            <p>{post.username}</p>
+            <p>{post.username} </p>
             <div className="flex space-x-2">
               <p>{new Date(post.updatedAt).toString().slice(3, 10)}</p>
               <p>{new Date(post.updatedAt).toString().slice(10, 25)}</p>
@@ -130,7 +130,7 @@ const PostDetails = () => {
           </div>
           <img
             src={IF + post.photo}
-            className="w-full mx-auto mt-8 rounded-2xl"
+            className="w-full mx-auto mt-8 rounded-md "
             alt=""
           />
           <p className="mx-auto mt-8">{post.desc}</p>

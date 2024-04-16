@@ -11,7 +11,7 @@ const Profile = () => {
   const [email, setEmail] = useState("");
   const [password, setPossword] = useState("");
   const { user } = useContext(UserHookContext);
-  console.log(user);
+  //   console.log(param);
   //
   const fetchProfile = async () => {
     try {
@@ -27,7 +27,7 @@ const Profile = () => {
     fetchProfile();
   }, [param]);
 
-  // Updateeelt User
+  // Update User
   const handelUserUpdate = async () => {
     try {
       const res = await axios.put(
