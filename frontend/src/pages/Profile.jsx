@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Profiler, useContext, useEffect, useState } from "react";
 import { Footer, Navbar, ProfilePost } from "../compoents/UL";
 import { UserHookContext } from "../context/userContext";
 import axios from "axios";
@@ -10,24 +10,25 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPossword] = useState("");
-  const navigate = useNavigate();
   const [update, setUpdate] = useState(false);
+  const [post, setPosts] = useState([]);
+  const navigate = useNavigate();
+
   const { user, setUser } = useContext(UserHookContext);
 
-  // hole die username,email,und password aud api
+  // Fetch-Benutzerprofil
   const fetchProfile = async () => {
     try {
-      const res = await axios.get(`${URL}/api/users/` + user._id);
-      setUsername(res.data.username);
-      setEmail(res.data.email);
-      setPossword(res.data.possword);
+      if (user && user._id) {
+        const res = await axios.get(`${URL}/api/users/${user._id}`);
+        setUsername(res.data.username);
+        setEmail(res.data.email);
+        setPossword(res.data.password);
+      }
     } catch (error) {
       console.log(error);
     }
   };
-  useEffect(() => {
-    fetchProfile();
-  }, [param]);
 
   // Update User daten
   const handelUserUpdate = async () => {
@@ -51,7 +52,7 @@ const Profile = () => {
   // Deteted user
   const handeUserDeelet = async () => {
     try {
-      const deletUser = await axios.delete(`${URL}/api/users/` + user._id, {
+      const deletUser = await axios.delete(`${URL}/api/users/${user._id}`, {
         withCredentials: true,
       });
 
@@ -62,7 +63,26 @@ const Profile = () => {
       console.log(error);
     }
   };
-
+  // Fetch-Benutzerbeiträge
+  const fetchUserPosts = async () => {
+    try {
+      if (user && user._id) {
+        const res = await axios.get(`${URL}/api/posts/user/${user._id}`);
+        setPosts(res.data);
+        console.log(res.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //
+  useEffect(() => {
+    fetchProfile();
+  }, [param]);
+  //
+  useEffect(() => {
+    fetchUserPosts();
+  }, [param]);
   //
   return (
     <div>
@@ -71,12 +91,9 @@ const Profile = () => {
         {/* left */}
         <div className="flex flex-col md:w-[70%] w-full items-center mt-8">
           <h1 className="text-xl font-bold mb-4 ">Your posts</h1>
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
+          {post?.map((prof) => (
+            <ProfilePost key={prof._id} prof={prof} />
+          ))}
         </div>
         {/* right */}
         <div className="mt-12 md:w-[30%] w-full ">

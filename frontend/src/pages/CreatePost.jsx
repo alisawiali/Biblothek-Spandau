@@ -17,6 +17,8 @@ const CreatePost = () => {
   const [cat, setCat] = useState("");
   const [cats, setCats] = useState([]);
   const navigate = useNavigate();
+
+  //
   const deleteCategory = (item) => {
     const updatedCats = cats.filter((c, i) => i !== item);
     setCats(updatedCats);
@@ -51,7 +53,6 @@ const CreatePost = () => {
       try {
         const imgUpload = await axios.post(`${URL}/api/upload`, data);
         console.log(imgUpload);
-        // console.log(imgUpload);
       } catch (error) {
         console.log(error);
       }

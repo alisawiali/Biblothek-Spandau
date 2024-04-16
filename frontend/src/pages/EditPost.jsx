@@ -10,6 +10,7 @@ import { UserHookContext } from "../context/userContext";
 const EditPost = () => {
   //
   const postId = useParams().id;
+  console.log(postId);
   //  Hocks
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
