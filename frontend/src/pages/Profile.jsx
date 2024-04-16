@@ -3,16 +3,18 @@ import { Footer, Navbar, ProfilePost } from "../compoents/UL";
 import { UserHookContext } from "../context/userContext";
 import axios from "axios";
 import { URL } from "../url";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Profile = () => {
   const param = useParams().id;
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPossword] = useState("");
+  const navigate = useNavigate();
+  const [update, setUpdate] = useState(false);
   const { user } = useContext(UserHookContext);
-  //   console.log(param);
-  //
+
+  // hole die username,email,und password aud api
   const fetchProfile = async () => {
     try {
       const res = await axios.get(`${URL}/api/users/` + user._id);
@@ -27,8 +29,9 @@ const Profile = () => {
     fetchProfile();
   }, [param]);
 
-  // Update User
+  // Update User daten
   const handelUserUpdate = async () => {
+    setUpdate(false);
     try {
       const res = await axios.put(
         `${URL}/api/users/` + user._id,
@@ -39,6 +42,7 @@ const Profile = () => {
         },
         { withCredentials: true }
       );
+      setUpdate(true);
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -47,6 +51,12 @@ const Profile = () => {
   // Deteted user
   const handeUserDeelet = async () => {
     try {
+      const deletUser = await axios.delete(`${URL}/api/users/` + user._id, {
+        withCredentials: true,
+      });
+      navigate("/");
+      // alert("Account gelöscht!");
+      console.log(deletUser.data);
     } catch (error) {
       console.log(error);
     }
@@ -85,13 +95,13 @@ const Profile = () => {
               className="outline-none  px-4 py-2 text-gray-500"
               placeholder="Your email"
             />
-            <input
+            {/* <input
               onChange={(e) => setPossword(e.target.value)}
               value={password}
               type="password"
               className="outline-none  px-4 py-2 text-gray-500"
               placeholder="Your password"
-            />
+            /> */}
             <div className="flex items-center space-x-4 mt-8">
               <button
                 onClick={handelUserUpdate}
@@ -106,6 +116,11 @@ const Profile = () => {
                 Delet
               </button>
             </div>
+            {update && (
+              <h3 className="text-green-500 text-sm text-centermt-4">
+                user Updated successfully!
+              </h3>
+            )}
           </div>
         </div>
       </div>
