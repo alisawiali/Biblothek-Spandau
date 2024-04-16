@@ -12,7 +12,7 @@ const Profile = () => {
   const [password, setPossword] = useState("");
   const navigate = useNavigate();
   const [update, setUpdate] = useState(false);
-  const { user } = useContext(UserHookContext);
+  const { user, setUser } = useContext(UserHookContext);
 
   // hole die username,email,und password aud api
   const fetchProfile = async () => {
@@ -54,6 +54,8 @@ const Profile = () => {
       const deletUser = await axios.delete(`${URL}/api/users/` + user._id, {
         withCredentials: true,
       });
+
+      setUser(null);
       navigate("/");
       console.log(deletUser.data);
     } catch (error) {
