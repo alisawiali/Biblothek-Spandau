@@ -10,17 +10,17 @@ Hier ist eine grundlegende Anleitung zur Implementierung der Funktionen für die
 Folge den Anweisungen auf der Firebase-Website, um Firebase Authentication in dein Projekt zu integrieren.
 Konfiguriere die Anmeldung mit E-Mail und Passwort sowie ggf. andere Authentifizierungsmethoden nach Bedarf.
 
-**1 Registrierung:**
+**1-- Registrierung:**
 
 Erstelle ein Registrierungsformular in deiner Anwendung, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstellen, wenn das Formular abgeschickt wird.
 
-**2 Anmeldung:**
+**2-- Anmeldung:**
 
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
 
--- **Hinzufügen eines Buches:**
+--------**Hinzufügen eines Buches:**-------------
 
  - **Firebase Firestore einrichten:**
 
@@ -34,7 +34,7 @@ Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel,
 
 verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
- **3 Profilbild hinzufügen:**
+ **3--  Profilbild hinzufügen:**
 
 - **Datei-Upload-Funktionalität einrichten:**
 
@@ -48,7 +48,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
---  **Löschen des Accounts:**
+--  **4--  Löschen des Accounts:**
 
 - **Lösch-Option bereitstellen:**
 
