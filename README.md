@@ -20,7 +20,7 @@ Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstelle
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
 
---------**Hinzufügen eines Buches:**-------------
+**Hinzufügen eines Buches:**
 
  - **Firebase Firestore einrichten:**
 
@@ -48,7 +48,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
---  **4--  Löschen des Accounts:**
+##Löschen des Accounts:
 
 - **Lösch-Option bereitstellen:**
 
