@@ -5,27 +5,28 @@ Hier ist eine grundlegende Anleitung zur Implementierung der Funktionen für die
 
 **Registrierung und Anmeldung:**
 
--**1** Firebase Authentication einrichten:
+**1** Firebase Authentication einrichten:
 
 Folge den Anweisungen auf der Firebase-Website, um Firebase Authentication in dein Projekt zu integrieren.
 Konfiguriere die Anmeldung mit E-Mail und Passwort sowie ggf. andere Authentifizierungsmethoden nach Bedarf.
 
--**1 Registrierung:**
+**1 Registrierung:**
 
 Erstelle ein Registrierungsformular in deiner Anwendung, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstellen, wenn das Formular abgeschickt wird.
 
--**2 Anmeldung:**
+**2 Anmeldung:**
 
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
 
 **Hinzufügen eines Buches:**
 
--**1 Firebase Firestore einrichten:**
+**1 Firebase Firestore einrichten:**
 
 Konfiguriere Firebase Firestore als deine Datenbank für die Speicherung von Bücherinformationen.
--**2 Formular zum Hinzufügen eines Buches erstellen:**
+
+**2 Formular zum Hinzufügen eines Buches erstellen:**
 
 Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel, Autor, Genre usw. auffordert.
 
@@ -33,27 +34,27 @@ Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel,
 
 **5**erwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
--**Profilbild hinzufügen:**
+**Profilbild hinzufügen:**
 
--**1 Datei-Upload-Funktionalität einrichten:**
+**1 Datei-Upload-Funktionalität einrichten:**
 
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
 
--**2 Bild in Firebase Storage speichern:**
+**2 Bild in Firebase Storage speichern:**
 
 Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
--**3 Profilbild-URL in Firestore speichern:**
+**3 Profilbild-URL in Firestore speichern:**
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
 **Löschen des Accounts:**
 
--**1Lösch-Option bereitstellen:**
+**1Lösch-Option bereitstellen:**
 
 Füge eine Option in das Benutzerprofil hinzu, die es Benutzern ermöglicht, ihren Account zu löschen.
 
--**2Account löschen:**
+**2Account löschen:**
 
 Verwende die Firebase Authentication-API, um den aktuellen Benutzeraccount zu löschen, wenn die Lösch-Option ausgewählt wird.
 Lösche auch alle zugehörigen Daten des Benutzers aus der Firestore-Datenbank und dem Storage, falls erforderlich.
