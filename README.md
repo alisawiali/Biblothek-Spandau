@@ -1,7 +1,7 @@
 
 Willkommen zur Bibliothek Spandau README
 
-Hier ist eine grundlegende Anleitung zur Implementierung der Funktionen für die Benutzerregistrierung, das Einloggen, das Hinzufügen eines Buches und das Hinzufügen eines Profilbilds. Bitte beachte, dass dies nur ein Leitfaden ist und du möglicherweise Anpassungen vornehmen musst, um sie an deine spezifischen Anforderungen anzupassen.
+Dieses Projekt präsentiert die Bibliothek Spandau, eine virtuelle Bibliotheksanwendung, die es Benutzern ermöglicht, Bücher zu durchsuchen, auszuleihen, hinzuzufügen und zu lesen, insbesondere solche, die sich auf die Bezirke Berlins beziehen.
 
 **Registrierung und Anmeldung:**
 
