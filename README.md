@@ -23,7 +23,7 @@ Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstelle
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
 
-**Hinzufügen eines Buches:**
+###Hinzufügen eines Buches:
 
   - **Firebase Firestore einrichten:**
 Konfiguriere Firebase Firestore als deine Datenbank für die Speicherung von Bücherinformationen.
