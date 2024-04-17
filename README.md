@@ -48,7 +48,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
-**Löschen des Accounts:**
+**4  Löschen des Accounts:**
 
 - **Lösch-Option bereitstellen:**
 
