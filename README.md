@@ -22,19 +22,19 @@ Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formu
 
 -- **Hinzufügen eines Buches:**
 
-**1 Firebase Firestore einrichten:**
+ - **Firebase Firestore einrichten:**
 
 Konfiguriere Firebase Firestore als deine Datenbank für die Speicherung von Bücherinformationen.
 
-**2 Formular zum Hinzufügen eines Buches erstellen:**
+ - **Formular zum Hinzufügen eines Buches erstellen:**
 
 Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel, Autor, Genre usw. auffordert.
 
-**3 Daten in Firestore speichern:**
+ - **Daten in Firestore speichern:**
 
 verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
--- **Profilbild hinzufügen:**
+ **Profilbild hinzufügen:**
 
 - **Datei-Upload-Funktionalität einrichten:**
 
