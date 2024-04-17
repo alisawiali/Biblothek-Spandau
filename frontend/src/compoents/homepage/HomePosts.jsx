@@ -5,7 +5,7 @@ import { IF } from "../../url";
 
 const HomePosts = ({ post }) => {
   return (
-    <div className="w-full flex mt-8 space-x-2 flex-col md:flex-row myt-8  space-y-4 md:space-y-0 md:space-x-2">
+    <div className="w-full flex mt-12 space-x-2 flex-col md:flex-row myt-8  space-y-4 md:space-y-0 md:space-x-2">
       {/* left */}
       <div className="flex md:w-1/3 h-[200px] justify-center items-center">
         <img
@@ -27,7 +27,7 @@ const HomePosts = ({ post }) => {
           </div>
         </div>
         {/*  slice um den text */}
-        <div className="w-[800px]">
+        <div className="">
           <p className="text-sm  p-4">
             {post.desc.slice(0, 250)}
             <NavLink className="text-blue-500 text-xs cursor-pointer">

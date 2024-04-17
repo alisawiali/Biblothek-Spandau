@@ -99,7 +99,7 @@ const PostDetails = () => {
           <Loader />
         </div>
       ) : (
-        <div className="px-8 md:px-[200px] mt-8">
+        <div className="px-8 md:px-[200px] mt-8 ">
           <div className="flex justify-between items-center">
             <h1 className="text-2x1 font-bold text-black md:text-3x1">
               {post.title}
@@ -130,7 +130,7 @@ const PostDetails = () => {
           </div>
           <img
             src={IF + post.photo}
-            className="w-full mx-auto mt-8 rounded-md "
+            className="w-full h-[400px] mx-auto mt-8 rounded-lg "
             alt=""
           />
           <p className="mx-auto mt-8">{post.desc}</p>

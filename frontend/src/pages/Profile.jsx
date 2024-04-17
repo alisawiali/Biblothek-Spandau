@@ -114,13 +114,7 @@ const Profile = () => {
               className="outline-none  px-4 py-2 text-gray-500"
               placeholder="Your email"
             />
-            {/* <input
-              onChange={(e) => setPossword(e.target.value)}
-              value={password}
-              type="password"
-              className="outline-none  px-4 py-2 text-gray-500"
-              placeholder="Your password"
-            /> */}
+
             <div className="flex items-center space-x-4 mt-8">
               <button
                 onClick={handelUserUpdate}
