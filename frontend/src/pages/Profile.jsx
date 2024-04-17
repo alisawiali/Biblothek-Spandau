@@ -29,6 +29,9 @@ const Profile = () => {
       console.log(error);
     }
   };
+  useEffect(() => {
+    fetchProfile();
+  }, [param]);
 
   // Update User daten
   const handelUserUpdate = async () => {
@@ -76,9 +79,7 @@ const Profile = () => {
     }
   };
   //
-  useEffect(() => {
-    fetchProfile();
-  }, [param]);
+
   //
   useEffect(() => {
     fetchUserPosts();
