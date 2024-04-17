@@ -30,6 +30,7 @@ Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel,
 **5**erwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
 -**Profilbild hinzufügen:**
+
 -**1 Datei-Upload-Funktionalität einrichten:**
 
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
@@ -41,6 +42,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
 **Löschen des Accounts:**
+
 -**1Lösch-Option bereitstellen:**
 
 Füge eine Option in das Benutzerprofil hinzu, die es Benutzern ermöglicht, ihren Account zu löschen.
