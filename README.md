@@ -13,12 +13,12 @@ Dieses Projekt präsentiert die Bibliothek Spandau, eine virtuelle Bibliotheksan
 Folge den Anweisungen auf der Firebase-Website, um Firebase Authentication in dein Projekt zu integrieren.
 Konfiguriere die Anmeldung mit E-Mail und Passwort sowie ggf. andere Authentifizierungsmethoden nach Bedarf.
 
-**1: Registrierung:**
+## Registrierung:**
 
 Erstelle ein Registrierungsformular in deiner Anwendung, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstellen, wenn das Formular abgeschickt wird.
 
-**2: Anmeldung:**
+## Anmeldung:
 
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
@@ -32,7 +32,7 @@ Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel,
    - **Daten in Firestore speichern:**
 verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
- **3:  Profilbild hinzufügen:**
+ ##  Profilbild hinzufügen:**
 
  - **Datei-Upload-Funktionalität einrichten:**
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
@@ -41,7 +41,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
   - **Profilbild-URL in Firestore speichern:**
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
-**4:  Löschen des Accounts:**
+##  Löschen des Accounts:**
 
   - **Lösch-Option bereitstellen:**
 Füge eine Option in das Benutzerprofil hinzu, die es Benutzern ermöglicht, ihren Account zu löschen.
