@@ -24,25 +24,25 @@ Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formu
 
   - **Firebase Firestore einrichten:**
 Konfiguriere Firebase Firestore als deine Datenbank für die Speicherung von Bücherinformationen.
-  - **Formular zum Hinzufügen eines Buches erstellen:**
+   - **Formular zum Hinzufügen eines Buches erstellen:**
 Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel, Autor, Genre usw. auffordert.
-  - **Daten in Firestore speichern:**
+   - **Daten in Firestore speichern:**
 verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
  **3:  Profilbild hinzufügen:**
 
  - **Datei-Upload-Funktionalität einrichten:**
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
- - **Bild in Firebase Storage speichern:**
+  - **Bild in Firebase Storage speichern:**
 Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
- - **Profilbild-URL in Firestore speichern:**
+  - **Profilbild-URL in Firestore speichern:**
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
 **4:  Löschen des Accounts:**
 
- - **Lösch-Option bereitstellen:**
+  - **Lösch-Option bereitstellen:**
 Füge eine Option in das Benutzerprofil hinzu, die es Benutzern ermöglicht, ihren Account zu löschen.
- - **Account löschen:**
+  - **Account löschen:**
 Verwende die Firebase Authentication-API, um den aktuellen Benutzeraccount zu löschen, wenn die Lösch-Option ausgewählt wird.
 Lösche auch alle zugehörigen Daten des Benutzers aus der Firestore-Datenbank und dem Storage, falls erforderlich.
 Vielen Dank für deine Unterstützung und viel Spaß beim Lesen in der Bibliothek Spandau!
