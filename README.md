@@ -20,7 +20,7 @@ Verwende die Firebase Authentication-API, um ein neues Benutzerkonto zu erstelle
 Erstelle ein Anmeldeformular, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
 Verwende die Firebase Authentication-API, um Benutzer anzumelden, wenn das Formular abgeschickt wird.
 
-**Hinzufügen eines Buches:**
+-- **Hinzufügen eines Buches:**
 
 **1 Firebase Firestore einrichten:**
 
@@ -32,29 +32,29 @@ Erstelle ein Formular, das Benutzer zur Eingabe von Buchinformationen wie Titel,
 
 **3 Daten in Firestore speichern:**
 
-**5**erwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
+verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Firestore-Datenbank zu speichern, wenn das Formular abgeschickt wird.
 
-**Profilbild hinzufügen:**
+-- **Profilbild hinzufügen:**
 
-**1 Datei-Upload-Funktionalität einrichten:**
+- **1 Datei-Upload-Funktionalität einrichten:**
 
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
 
-**2 Bild in Firebase Storage speichern:**
+- **2 Bild in Firebase Storage speichern:**
 
 Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
-**3 Profilbild-URL in Firestore speichern:**
+- **3 Profilbild-URL in Firestore speichern:**
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
-**Löschen des Accounts:**
+--  **Löschen des Accounts:**
 
-**1Lösch-Option bereitstellen:**
+- **1 Lösch-Option bereitstellen:**
 
 Füge eine Option in das Benutzerprofil hinzu, die es Benutzern ermöglicht, ihren Account zu löschen.
 
-**2Account löschen:**
+- **2 Account löschen:**
 
 Verwende die Firebase Authentication-API, um den aktuellen Benutzeraccount zu löschen, wenn die Lösch-Option ausgewählt wird.
 Lösche auch alle zugehörigen Daten des Benutzers aus der Firestore-Datenbank und dem Storage, falls erforderlich.
