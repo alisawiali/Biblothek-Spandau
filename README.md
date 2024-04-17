@@ -36,15 +36,15 @@ verwende die Firestore-API, um die eingegebenen Buchinformationen in deiner Fire
 
 -- **Profilbild hinzufügen:**
 
-- **1 Datei-Upload-Funktionalität einrichten:**
+- **Datei-Upload-Funktionalität einrichten:**
 
 Erstelle eine Möglichkeit für Benutzer, Bilder hochzuladen, entweder durch die Verwendung eines Datei-Upload-Formulars oder einer Dateiauswahl-Schnittstelle.
 
-- **2 Bild in Firebase Storage speichern:**
+- **Bild in Firebase Storage speichern:**
 
 Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
-- **3 Profilbild-URL in Firestore speichern:**
+- **Profilbild-URL in Firestore speichern:**
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
