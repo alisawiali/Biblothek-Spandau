@@ -4,10 +4,12 @@ Willkommen zur Bibliothek Spandau README
 Hier ist eine grundlegende Anleitung zur Implementierung der Funktionen für die Benutzerregistrierung, das Einloggen, das Hinzufügen eines Buches und das Hinzufügen eines Profilbilds. Bitte beachte, dass dies nur ein Leitfaden ist und du möglicherweise Anpassungen vornehmen musst, um sie an deine spezifischen Anforderungen anzupassen.
 
 **Registrierung und Anmeldung:**
+
 -**1** Firebase Authentication einrichten:
 
 Folge den Anweisungen auf der Firebase-Website, um Firebase Authentication in dein Projekt zu integrieren.
 Konfiguriere die Anmeldung mit E-Mail und Passwort sowie ggf. andere Authentifizierungsmethoden nach Bedarf.
+
 -**1 Registrierung:**
 
 Erstelle ein Registrierungsformular in deiner Anwendung, das Benutzer zur Eingabe ihrer E-Mail-Adresse und ihres Passworts auffordert.
