@@ -5,7 +5,7 @@ Hier ist eine grundlegende Anleitung zur Implementierung der Funktionen für die
 
 **Registrierung und Anmeldung:**
 
-**1** Firebase Authentication einrichten:
+****Firebase Authentication einrichten:****
 
 Folge den Anweisungen auf der Firebase-Website, um Firebase Authentication in dein Projekt zu integrieren.
 Konfiguriere die Anmeldung mit E-Mail und Passwort sowie ggf. andere Authentifizierungsmethoden nach Bedarf.
@@ -48,7 +48,7 @@ Verwende Firebase Storage, um das hochgeladene Bild zu speichern.
 
 Speichere den Download-URL des Profilbilds in der Benutzerdatenbank in Firestore.
 
-##Löschen des Accounts:
+**Löschen des Accounts:**
 
 - **Lösch-Option bereitstellen:**
 
