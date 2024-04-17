@@ -37,14 +37,10 @@ Vielen Dank für deine Unterstützung und viel Spaß beim Lesen in der Bibliothe
   - **index.js**: Entry point for the backend application.
   - **package-lock.json**: Dependency lock file.
   - **package.json**: Node.js package configuration file.
+  - **Middleware hinzufügen: Verwende Middleware**  CORS
+  - **Body-Parser und Multer** um HTTP-Anfragen zu verarbeiten Dateien hochzuladen und die Kommunikation zwischen Frontend und Backend zu ermöglichen.
+ 
 
-
-
--**.Einrichten des Servers: Erstelle einen Express-Server, der auf einem bestimmten Port läuft und HTTP-Anfragen von deinem Frontend entgegennimmt.
--**.API-Routen definieren: Erstelle API-Endpunkte für verschiedene Aktionen wie das Abrufen von Büchern, Hinzufügen neuer Bücher, Authentifizierung usw.
--**.Middleware hinzufügen: Verwende Middleware wie CORS, Body-Parser und Multer, um HTTP-Anfragen zu verarbeiten, Dateien hochzuladen und die Kommunikation zwischen Frontend und Backend zu ermöglichen.
--**.Datenbankintegration: Verbinde deine Anwendung mit einer MongoDB-Datenbank mithilfe von Mongoose oder einem anderen ODM (Object Data Modeling) -Tool, um Daten zu speichern, abzurufen und zu aktualisieren.
--**.Authentifizierung und Autorisierung implementieren: Verwende JWT (JSON Web Tokens), um Benutzer zu authentifizieren und zu autorisieren, und speichere verschlüsselte Benutzerinformationen sicher in der Datenbank.
 
 
 Frontend (React):
@@ -55,13 +51,8 @@ Frontend (React):
   - **README.md**: Readme file for frontend.
   - **package-lock.json**: Dependency lock file.
   - **package.json**: Node.js package configuration file.
+  - **Axios** , um HTTP-Anfragen an die Backend-API-Endpunkte zu senden und Daten von der Datenbank abzurufen.
 Backend (Node.js/Express):
 
--** Frontend**
--** .Komponentenstruktur planen: Plane die Struktur deiner React-Komponenten, einschließlich Seitenkomponenten, Layoutkomponenten und wiederverwendbaren UI-Komponenten.
--** .Routing einrichten: Verwende React Router DOM, um das Routing in deiner Anwendung zu konfigurieren und zwischen verschiedenen Seiten zu navigieren.
--**.Daten aus dem Backend abrufen: Verwende Axios, um HTTP-Anfragen an die Backend-API-Endpunkte zu senden und Daten von der Datenbank abzurufen.
--**.Benutzerinteraktionen behandeln: Implementiere Funktionen und Ereignishandler, um Benutzerinteraktionen zu behandeln, z. B. das Ausleihen von Büchern, das Hinzufügen neuer Bücher usw.
--**.Styling und Design: Verwende CSS, SCSS oder eine UI-Bibliothek wie Bootstrap oder Material-UI, um deine Benutzeroberfläche zu gestalten und zu stylen.
--**.Zustandsverwaltung: Verwende den React-Zustand und/oder Bibliotheken wie Redux oder Zustandshaken, um den Zustand deiner Anwendung zu verwalten und Daten zwischen Komponenten zu teilen.
+
 
