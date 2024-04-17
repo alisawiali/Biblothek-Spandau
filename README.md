@@ -27,7 +27,9 @@ Wir hoffen, dass diese Anwendung dazu beiträgt, die faszinierende Geschichte un
 
 Vielen Dank für deine Unterstützung und viel Spaß beim Lesen in der Bibliothek Spandau!
 
-## Folder Structure
+## Functionality
+
+The Hotel Booking System allows users to:
 
 - **api**: Contains the backend code for the Hotel Booking System.
   - **service**: Directory for service-related files.
