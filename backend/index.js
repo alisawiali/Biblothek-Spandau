@@ -14,6 +14,8 @@ import commentsRouter from "./src/router/comment.js";
 dotenv.config();
 
 const app = express();
+
+
 app.use(express.json());
 const corsOptions = {
   origin: process.env.FRONTEND_API,
@@ -25,19 +27,14 @@ const corsOptions = {
 // Middleware für CORS
 app.use(cors(corsOptions));
 
-const PORT = process.env.PORT || 3000;
-
 // Datenbankverbindung herstellen
 await connectDB();
 
+//
+const PORT = process.env.PORT || 3000;
+
 // Cookie-Parser Middleware
 app.use(cookieParser());
-
-// Middleware vor den Routen
-app.use("/api/auth", authRouter);
-app.use("/api/users", userRouter);
-app.use("/api/posts", postRouter);
-app.use("/api/comments", commentsRouter);
 
 // Aktualisierte Pfadberechnung für das Bilder-Verzeichnis
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
@@ -57,6 +54,17 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("Image has been uploaded successfully");
 });
 
+// Middleware vor den Routen
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
+app.use("/api/posts", postRouter);
+app.use("/api/comments", commentsRouter);
+
+// Fehlerbehandlungsmiddleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: err.message });
+});
 
 // Server starten
 app.listen(PORT, () => {
