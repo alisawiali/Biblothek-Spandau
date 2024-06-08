@@ -34,7 +34,12 @@ export const updateUser = async (req, res, next) => {
 
 export const deletedUser = async (req, res, next) => {
   try {
-    await User.findByIdAndDelete(req.params.id);
+ const userId = req.params.id;
+
+ const user = await User.findByIdAndDelete(userId);
+ if (!user) {
+   return res.status(404).json({ message: "User not found" });
+ }
     await Post.deleteMany({ userId: req.params.id });
     await Comment.deleteMany({ userId: req.params.id });
 
