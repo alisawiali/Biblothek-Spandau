@@ -42,6 +42,8 @@ const Comment = ({ item, post }) => {
         </div>
       </div>
       <p className="px-4 mt-2">{item.comment}</p>
+      <p className="text-sm text-gray-500">Posted on: {post?.title}</p>{" "}
+      {/* Hier wird der Titel des Posts angezeigt */}
     </div>
   );
 };
