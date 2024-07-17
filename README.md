@@ -52,35 +52,34 @@ Vielen Dank für deine Unterstützung und viel Spaß beim Lesen in der Bibliothe
 
 ## Functionality
 
-The  Bibliothek Spandau README System allows users to:
+Das Bibliothek Spandau README System ermöglicht Benutzern:
 
-- **api**: Contains the backend code for the Hotel Booking System.
-  - **service**: Directory for service-related files.
-  - **src**: Source files for backend functionality.
-  - **.env**: Environment variables configuration file.
-  - **.gitignore**: Git ignore file.
-  - **index.js**: Entry point for the backend application.
-  - **package-lock.json**: Dependency lock file.
-  - **package.json**: Node.js package configuration file.
-  - **Middleware hinzufügen: Verwende Middleware**  CORS.
-  - **servise** BD , die Connection BibliothekApp to DB established!.
-  - **Body-Parser und Multer** um HTTP-Anfragen zu verarbeiten Dateien hochzuladen und die Kommunikation zwischen Frontend und Backend zu ermöglichen.
+- **api**: Enthält den Backend-Code für das Hotelbuchungssystem.
+  - **service**: Verzeichnis für servicebezogene Dateien.
+  - **src**: Quellcode für die Backend-Funktionalität.
+  - **.env**: Konfigurationsdatei für Umgebungsvariablen.
+  - **.gitignore**: Datei für Git-Ignore-Regeln..
+  - **index.js**: Einstiegspunkt für die Backend-Anwendung.
+  - **package-lock.json**: Abhängigkeitssperrdatei.
+  - **package.json**: Konfigurationsdatei für Node.js-Pakete.
+  - **Middleware hinzufügen: Verwende Middleware**  Verwende Middleware CORS.
+  - **servise** BD , Die Verbindung zur BibliothekApp-Datenbank wurde hergestellt!.
+  - **Body-Parser und Multer** Um HTTP-Anfragen zu verarbeiten, Dateien hochzuladen und die Kommunikation zwischen Frontend und Backend zu ermöglichen.
  
 
 
 
 Frontend (React):
-- **frontend**: Contains the frontend code for the Hotel Booking System.
-  - **public**: Public assets directory.
-  - **src**: Source files for frontend components.
+- **frontend**: Enthält den Frontend-Code für das Hotelbuchungssystem.
+  - **public**: Verzeichnis für öffentliche Ressourcen.
+  - **src**: Quellcode für Frontend-Komponenten.
   - **pages** erhählt page seits.
-  - **README.md**: Readme file for frontend.
-  - **package-lock.json**: Dependency lock file.
-  - **package.json**: Node.js package configuration file.
-  - **Axios** , um HTTP-Anfragen an die Backend-API-Endpunkte zu senden und Daten von der Datenbank abzurufen.
-Backend (Node.js/Express).
+  - **README.md**: Readme-Datei für das Frontend.
+  - **package-lock.json**: Abhängigkeitssperrdatei.
+  - **package.json**: Konfigurationsdatei für Node.js-Pakete.
+  - **Axios** ,Um HTTP-Anfragen an die Backend-API-Endpunkte zu senden und Daten von der Datenbank abzurufen.
   -**react-router-dom**
-  -**react-icons** 
+  -**react-icons** -react-router-dom -react-icons
 
 
 
