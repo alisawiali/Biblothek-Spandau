@@ -1,5 +1,5 @@
 
-Willkommen zur Bibliothek Spandau README
+**Willkommen zur Bibliothek Spandau README**
 
 Dieses Projekt präsentiert die Bibliothek Spandau, eine virtuelle Bibliotheksanwendung, die es Benutzern ermöglicht, Bücher zu durchsuchen, auszuleihen, hinzuzufügen und zu lesen, insbesondere solche, die sich auf die Bezirke Berlins beziehen.
 
