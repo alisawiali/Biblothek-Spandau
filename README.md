@@ -1,3 +1,8 @@
+<img width="575" alt="Bildschirmfoto 2024-08-01 um 11 32 05" src="https://github.com/user-attachments/assets/9ef49a1f-3f0b-4f1c-b7bf-e211262155b1">
+<img width="438" alt="Bildschirmfoto 2024-08-01 um 11 33 18" src="https://github.com/user-attachments/assets/7ac53dc8-76f6-47ce-aef8-20cfa3ce4f2a">
+
+
+
 <img width="618" alt="Bildschirmfoto 2024-08-01 um 11 21 01" src="https://github.com/user-attachments/assets/8f6d4932-cfb5-4d51-922f-3721b6c56a22">
 
 <img width="1168" alt="Bildschirmfoto 2024-08-01 um 11 28 17" src="https://github.com/user-attachments/assets/662bb863-7c42-495c-a2fc-bb9d8b2a8dbd">
