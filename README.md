@@ -3,13 +3,11 @@
 
 
 
-<img width="618" alt="Bildschirmfoto 2024-08-01 um 11 21 01" src="https://github.com/user-attachments/assets/8f6d4932-cfb5-4d51-922f-3721b6c56a22">
+<img width="618" alt="Bildschirmfoto 2024-08-01 um 11 21 01" src="https://github.com/user-attachments/assets/58a81f6e-74fe-42c4-9332-eba878be88af">
+<img width="1169" alt="Bildschirmfoto 2024-08-01 um 11 29 25" src="https://github.com/user-attachments/assets/158a20c7-0f7e-4211-b13a-e9df536b1de5">
 
-<img width="1168" alt="Bildschirmfoto 2024-08-01 um 11 28 17" src="https://github.com/user-attachments/assets/662bb863-7c42-495c-a2fc-bb9d8b2a8dbd">
-
-<img width="1169" alt="Bildschirmfoto 2024-08-01 um 11 29 25" src="https://github.com/user-attachments/assets/26c2157a-f83e-42e1-a023-118e920d3ff6">
-
-<img width="1053" alt="Bildschirmfoto 2024-08-01 um 11 29 46" src="https://github.com/user-attachments/assets/9f406574-891c-4437-9c7c-507f2a2f6159">
+<img width="1053" alt="Bildschirmfoto 2024-08-01 um 11 29 46" src="https://github.com/user-attachments/assets/16663aa6-fab1-4d7f-abdd-77e00ca6a8ce">
+<img width="1168" alt="Bildschirmfoto 2024-08-01 um 11 28 17" src="https://github.com/user-attachments/assets/7adfb451-a3c3-40b0-9279-522bade643ce">
 
  # Willkommen zur Bibliothek Spandau README #
 
