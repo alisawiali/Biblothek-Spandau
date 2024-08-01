@@ -1,4 +1,4 @@
-
+https://github.com/user-attachments/assets/8f6d4932-cfb5-4d51-922f-3721b6c56a22
  # Willkommen zur Bibliothek Spandau README #
 
 Dieses Projekt präsentiert die Bibliothek Spandau, eine virtuelle Bibliotheksanwendung, die es Benutzern ermöglicht, Bücher zu durchsuchen, auszuleihen, hinzuzufügen und zu lesen, insbesondere solche, die sich auf die Bezirke Berlins beziehen.
