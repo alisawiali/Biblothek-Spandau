@@ -2,6 +2,7 @@
 
 <img width="1168" alt="Bildschirmfoto 2024-08-01 um 11 28 17" src="https://github.com/user-attachments/assets/662bb863-7c42-495c-a2fc-bb9d8b2a8dbd">
 
+<img width="1169" alt="Bildschirmfoto 2024-08-01 um 11 29 25" src="https://github.com/user-attachments/assets/26c2157a-f83e-42e1-a023-118e920d3ff6">
 
  # Willkommen zur Bibliothek Spandau README #
 
