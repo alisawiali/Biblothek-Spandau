@@ -9,6 +9,9 @@
 <img width="1053" alt="Bildschirmfoto 2024-08-01 um 11 29 46" src="https://github.com/user-attachments/assets/16663aa6-fab1-4d7f-abdd-77e00ca6a8ce">
 <img width="1168" alt="Bildschirmfoto 2024-08-01 um 11 28 17" src="https://github.com/user-attachments/assets/7adfb451-a3c3-40b0-9279-522bade643ce">
 
+
+
+#######--------#########
  # Willkommen zur Bibliothek Spandau README #
 
 Dieses Projekt präsentiert die Bibliothek Spandau, eine virtuelle Bibliotheksanwendung, die es Benutzern ermöglicht, Bücher zu durchsuchen, auszuleihen, hinzuzufügen und zu lesen, insbesondere solche, die sich auf die Bezirke Berlins beziehen.
